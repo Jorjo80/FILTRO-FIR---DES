@@ -1,0 +1,57 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.2 (64-bit)
+# SW Build 2348494 on Mon Oct  1 18:25:44 MDT 2018
+# IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
+# Start of session at: Tue Apr  2 20:37:47 2019
+# Process ID: 11728
+# Current directory: H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FiltroFir
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12516 H:\Jorge\UPM\master\1erCuatri\DES\Trabajo_filtroFIR\FiltroFir\FiltroFir.xpr
+# Log file: H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FiltroFir/vivado.log
+# Journal file: H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FiltroFir\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FiltroFir/FiltroFir.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 855.379 ; gain = 72.934
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+[Tue Apr  2 20:40:19 2019] Launched synth_1...
+Run output will be captured here: H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FiltroFir/FiltroFir.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Tue Apr  2 20:41:54 2019] Launched impl_1...
+Run output will be captured here: H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FiltroFir/FiltroFir.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 109 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2.2
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.119 . Memory (MB): peak = 1266.977 ; gain = 1.414
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.119 . Memory (MB): peak = 1266.977 ; gain = 1.414
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:17 ; elapsed = 00:00:14 . Memory (MB): peak = 1349.488 ; gain = 413.375
+WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
+close_design
+close_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1829.367 ; gain = 406.758
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z020clg400-1
+INFO: [Netlist 29-17] Analyzing 109 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
