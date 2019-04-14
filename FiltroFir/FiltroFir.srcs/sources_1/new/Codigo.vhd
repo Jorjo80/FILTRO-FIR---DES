@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Jorge Contreras Ortiz
 -- 
 -- Create Date: 02.04.2019 20:31:40
 -- Design Name: 

@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.2 (64-bit)
+# SW Build 2348494 on Mon Oct  1 18:25:44 MDT 2018
+# IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
+# Start of session at: Sun Apr  7 18:03:26 2019
+# Process ID: 19860
+# Current directory: H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20616 H:\Jorge\UPM\master\1erCuatri\DES\Trabajo_filtroFIR\FILTRO-FIR---DES\FiltroFir\FiltroFir.xpr
+# Log file: H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/vivado.log
+# Journal file: H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/FiltroFir.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/FiltroFir.srcs/sources_1/new'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:11 . Memory (MB): peak = 877.793 ; gain = 133.512
+update_compile_order -fileset sources_1
+open_bd_design {H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/FiltroFir.srcs/sources_1/bd/design_1/design_1.bd}
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_50M
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Successfully read diagram <design_1> from BD file <H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/FiltroFir.srcs/sources_1/bd/design_1/design_1.bd>
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_register_slice:2.1 axi_register_slice_0
+endgroup
+delete_bd_objs [get_bd_cells axi_register_slice_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0
+endgroup
+set_property -dict [list CONFIG.CONST_WIDTH {8} CONFIG.CONST_VAL {2}] [get_bd_cells xlconstant_0]
+undo
+INFO: [Common 17-17] undo 'set_property -dict [list CONFIG.CONST_WIDTH {8} CONFIG.CONST_VAL {2}] [get_bd_cells xlconstant_0]'
+set_property location {2 316 5} [get_bd_cells xlconstant_0]
+set_property -dict [list CONFIG.CONST_WIDTH {8}] [get_bd_cells xlconstant_0]

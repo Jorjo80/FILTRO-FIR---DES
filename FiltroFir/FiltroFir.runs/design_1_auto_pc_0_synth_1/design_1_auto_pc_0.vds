@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.2 (64-bit)
+# SW Build 2348494 on Mon Oct  1 18:25:44 MDT 2018
+# IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
+# Start of session at: Thu Apr 11 20:59:22 2019
+# Process ID: 1080
+# Current directory: H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/FiltroFir.runs/design_1_auto_pc_0_synth_1
+# Command line: vivado.exe -log design_1_auto_pc_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_auto_pc_0.tcl
+# Log file: H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/FiltroFir.runs/design_1_auto_pc_0_synth_1/design_1_auto_pc_0.vds
+# Journal file: H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/FiltroFir.runs/design_1_auto_pc_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_auto_pc_0.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 13cdcd7764c9434b.
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 11 20:59:35 2019...

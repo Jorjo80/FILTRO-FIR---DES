@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FiltroFir/FiltroFir.runs/impl_1'
+HD_PWD='H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/FiltroFir.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

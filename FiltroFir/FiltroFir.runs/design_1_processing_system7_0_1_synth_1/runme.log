@@ -1,0 +1,30 @@
+
+*** Running vivado
+    with args -log design_1_processing_system7_0_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_processing_system7_0_1.tcl
+
+
+****** Vivado v2018.2.2 (64-bit)
+  **** SW Build 2348494 on Mon Oct  1 18:25:44 MDT 2018
+  **** IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source design_1_processing_system7_0_1.tcl -notrace
+Command: synth_design -top design_1_processing_system7_0_1 -part xc7z020clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 10592 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 458.289 ; gain = 97.512
+---------------------------------------------------------------------------------
+ERROR: [Synth 8-439] module 'design_1_processing_system7_0_1' not found
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 512.891 ; gain = 152.113
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+2 Infos, 0 Warnings, 0 Critical Warnings and 2 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 11 20:57:44 2019...
