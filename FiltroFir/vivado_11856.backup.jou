@@ -1,0 +1,59 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.2 (64-bit)
+# SW Build 2348494 on Mon Oct  1 18:25:44 MDT 2018
+# IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
+# Start of session at: Wed Apr 24 18:00:10 2019
+# Process ID: 11856
+# Current directory: H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17740 H:\Jorge\UPM\master\1erCuatri\DES\Trabajo_filtroFIR\FILTRO-FIR---DES\FiltroFir\FiltroFir.xpr
+# Log file: H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/vivado.log
+# Journal file: H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/FiltroFir.xpr
+update_compile_order -fileset sources_1
+reset_run design_1_processing_system7_0_1_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_bd_design {H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/FiltroFir.srcs/sources_1/bd/design_1/design_1.bd}
+reset_run design_1_processing_system7_0_1_synth_1
+reset_run design_1_xbar_0_synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+delete_bd_objs [get_bd_nets processing_system7_0_FCLK_RESET0_N]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto} rst_polarity {ACTIVE_LOW}}  [get_bd_pins rst_ps7_0_50M/ext_reset_in]
+reset_run design_1_processing_system7_0_1_synth_1
+save_bd_design
+reset_run impl_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+delete_bd_objs [get_bd_nets rst_ps7_0_50M_interconnect_aresetn] [get_bd_nets reset_rtl_0_1] [get_bd_cells rst_ps7_0_50M]
+delete_bd_objs [get_bd_intf_nets processing_system7_0_M_AXI_GP0] [get_bd_intf_nets ps7_0_axi_periph_M00_AXI] [get_bd_intf_nets processing_system7_0_M_AXI_GP1] [get_bd_intf_nets ps7_0_axi_periph_M01_AXI] [get_bd_cells ps7_0_axi_periph]
+delete_bd_objs [get_bd_intf_nets axi_gpio_1_GPIO] [get_bd_intf_nets axi_gpio_1_GPIO2] [get_bd_nets rst_ps7_0_50M_peripheral_aresetn] [get_bd_cells axi_gpio_1]
+delete_bd_objs [get_bd_intf_nets axi_gpio_0_GPIO] [get_bd_intf_nets axi_gpio_0_GPIO2] [get_bd_cells axi_gpio_0]
+delete_bd_objs [get_bd_intf_ports gpio_rtl_2] [get_bd_intf_ports gpio_rtl_1] [get_bd_intf_ports gpio_rtl_0] [get_bd_intf_ports gpio_rtl_3]
+regenerate_bd_layout
+delete_bd_objs [get_bd_ports reset_rtl_0]
+reset_run design_1_processing_system7_0_1_synth_1
+save_bd_design
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+delete_bd_objs [get_bd_intf_nets processing_system7_0_DDR] [get_bd_intf_nets processing_system7_0_FIXED_IO] [get_bd_nets processing_system7_0_FCLK_CLK0] [get_bd_cells processing_system7_0]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config {Clk "New Clocking Wizard (100 MHz)" }  [get_bd_pins Filtro_FIR_4in_0/i_clk]
+startgroup
+delete_bd_objs [get_bd_nets clk_wiz_clk_out1]
+delete_bd_objs [get_bd_intf_ports DDR] [get_bd_intf_ports FIXED_IO]
+delete_bd_objs [get_bd_cells clk_wiz]
+endgroup
+export_ip_user_files -of_objects  [get_files H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/FiltroFir.srcs/sources_1/bd/design_1/design_1.bd] -no_script -reset -force -quiet
+remove_files  H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/FiltroFir.srcs/sources_1/bd/design_1/design_1.bd
+create_bd_design "design_1"
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0]
+endgroup
