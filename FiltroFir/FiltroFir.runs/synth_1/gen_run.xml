@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1556123149">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1556720718">
   <File Type="PA-TCL" Name="Filtro_FIR_4in.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="Filtro_FIR_4in_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Filtro_FIR_4in_reports.tcl"/>
@@ -48,8 +48,19 @@
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
   <Strategy Version="1" Minor="2">
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_processing_system7_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_0_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_rst_ps7_0_100M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_Filtro_FIR_4in_0_2"/>
 </GenRun>

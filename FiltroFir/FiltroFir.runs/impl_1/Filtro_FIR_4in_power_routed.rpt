@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
-| Date             : Wed Apr 24 18:31:11 2019
+| Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date             : Wed May  1 16:31:30 2019
 | Host             : DESKTOP-3OCE3Q5 running 64-bit major release  (build 9200)
 | Command          : report_power -file Filtro_FIR_4in_power_routed.rpt -pb Filtro_FIR_4in_power_summary_routed.pb -rpx Filtro_FIR_4in_power_routed.rpx
 | Design           : Filtro_FIR_4in
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 15.571 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 15.531 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 14.531                           |
+| Dynamic (W)              | 14.491                           |
 | Device Static (W)        | 1.039                            |
 | Effective TJA (C/W)      | 11.5                             |
 | Max Ambient (C)          | 0.0                              |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     2.569 |      653 |       --- |             --- |
-|   LUT as Logic |     2.077 |      294 |     53200 |            0.55 |
+| Slice Logic    |     2.564 |      653 |       --- |             --- |
+|   LUT as Logic |     2.072 |      294 |     53200 |            0.55 |
 |   CARRY4       |     0.347 |       67 |     13300 |            0.50 |
 |   Register     |     0.139 |      182 |    106400 |            0.17 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |        2 |       --- |             --- |
-| Signals        |     2.303 |      510 |       --- |             --- |
+| Signals        |     2.267 |      510 |       --- |             --- |
 | I/O            |     9.660 |       52 |       125 |           41.60 |
 | Static Power   |     1.039 |          |           |                 |
-| Total          |    15.571 |          |           |                 |
+| Total          |    15.531 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,7 +71,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     5.334 |       5.036 |      0.299 |
+| Vccint    |       1.000 |     5.294 |       4.995 |      0.299 |
 | Vccaux    |       1.800 |     0.877 |       0.777 |      0.100 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -145,7 +145,7 @@ Table of Contents
 +----------------+-----------+
 | Name           | Power (W) |
 +----------------+-----------+
-| Filtro_FIR_4in |    14.531 |
+| Filtro_FIR_4in |    14.491 |
 +----------------+-----------+
 
 

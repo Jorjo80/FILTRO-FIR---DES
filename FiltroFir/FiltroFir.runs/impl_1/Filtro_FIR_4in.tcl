@@ -71,10 +71,12 @@ set rc [catch {
   set_property webtalk.parent_dir H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/FiltroFir.cache/wt [current_project]
   set_property parent.project_path H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/FiltroFir.xpr [current_project]
   set_property ip_repo_paths H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/FiltroFir.srcs/sources_1/new [current_project]
+  update_ip_catalog
   set_property ip_output_repo H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/FiltroFir.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   add_files -quiet H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/FiltroFir.runs/synth_1/Filtro_FIR_4in.dcp
   link_design -top Filtro_FIR_4in -part xc7z020clg400-1
+  write_hwdef -force -file Filtro_FIR_4in.hwdef
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
