@@ -1,42 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1556720999">
   <File Type="BITSTR-BMM" Name="Filtro_FIR_4in_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="Filtro_FIR_4in_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="Filtro_FIR_4in_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR" Name="Filtro_FIR_4in_power_routed.rpt"/>
   <File Type="PA-TCL" Name="Filtro_FIR_4in.tcl"/>
-  <File Type="OPT-TIMING" Name="Filtro_FIR_4in_timing_summary_opted.rpt"/>
   <File Type="OPT-DCP" Name="Filtro_FIR_4in_opt.dcp"/>
   <File Type="ROUTE-PWR-SUM" Name="Filtro_FIR_4in_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="Filtro_FIR_4in_reports.tcl"/>
   <File Type="OPT-DRC" Name="Filtro_FIR_4in_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="Filtro_FIR_4in.hwdef"/>
   <File Type="PWROPT-DCP" Name="Filtro_FIR_4in_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="Filtro_FIR_4in_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="Filtro_FIR_4in_timing_summary_pwropted.rpt"/>
   <File Type="PLACE-DCP" Name="Filtro_FIR_4in_placed.dcp"/>
   <File Type="PLACE-IO" Name="Filtro_FIR_4in_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="Filtro_FIR_4in_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="Filtro_FIR_4in_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="Filtro_FIR_4in_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="Filtro_FIR_4in_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="Filtro_FIR_4in_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="Filtro_FIR_4in_incremental_reuse_pre_placed.rpt"/>
   <File Type="BG-BGN" Name="Filtro_FIR_4in.bgn"/>
-  <File Type="PLACE-TIMING" Name="Filtro_FIR_4in_timing_summary_placed.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="Filtro_FIR_4in_postplace_pwropt.dcp"/>
   <File Type="BG-BIN" Name="Filtro_FIR_4in.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="Filtro_FIR_4in_timing_summary_postplace_pwropted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="Filtro_FIR_4in_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="Filtro_FIR_4in_drc_physopted.rpt"/>
   <File Type="BITSTR-MSK" Name="Filtro_FIR_4in.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="Filtro_FIR_4in_timing_summary_physopted.rpt"/>
   <File Type="ROUTE-ERROR-DCP" Name="Filtro_FIR_4in_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="Filtro_FIR_4in_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="Filtro_FIR_4in_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="Filtro_FIR_4in_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="Filtro_FIR_4in_drc_routed.pb"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="Filtro_FIR_4in.ltx"/>
   <File Type="ROUTE-DRC-RPX" Name="Filtro_FIR_4in_drc_routed.rpx"/>
   <File Type="BITSTR-MMI" Name="Filtro_FIR_4in.mmi"/>
@@ -50,24 +38,17 @@
   <File Type="ROUTE-TIMINGSUMMARY" Name="Filtro_FIR_4in_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="Filtro_FIR_4in_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="Filtro_FIR_4in_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="Filtro_FIR_4in_incremental_reuse_routed.rpt"/>
+  <File Type="RDI-RDI" Name="Filtro_FIR_4in.vdi"/>
   <File Type="ROUTE-CLK" Name="Filtro_FIR_4in_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="Filtro_FIR_4in_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="Filtro_FIR_4in_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="Filtro_FIR_4in_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="Filtro_FIR_4in_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Filtro_FIR_4in_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Filtro_FIR_4in_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Filtro_FIR_4in_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Filtro_FIR_4in_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="Filtro_FIR_4in_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="Filtro_FIR_4in_bus_skew_postroute_physopted.pb"/>
   <File Type="BG-BIT" Name="Filtro_FIR_4in.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="Filtro_FIR_4in_bus_skew_postroute_physopted.rpx"/>
   <File Type="BITSTR-RBT" Name="Filtro_FIR_4in.rbt"/>
   <File Type="BITSTR-NKY" Name="Filtro_FIR_4in.nky"/>
   <File Type="BG-DRC" Name="Filtro_FIR_4in.drc"/>
-  <File Type="RDI-RDI" Name="Filtro_FIR_4in.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
