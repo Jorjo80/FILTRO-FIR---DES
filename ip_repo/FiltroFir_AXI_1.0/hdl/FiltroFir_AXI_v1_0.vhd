@@ -16,11 +16,7 @@ entity FiltroFir_AXI_v1_0 is
 	);
 	port (
 		-- Users to add ports here
-		
-		i_coeff_0 : in std_logic_vector(7 downto 0);
-        i_coeff_1 : in std_logic_vector(7 downto 0);
-        i_coeff_2 : in std_logic_vector(7 downto 0);
-        i_coeff_3 : in std_logic_vector(7 downto 0);
+
         i_data : in std_logic_vector(7 downto 0);
         o_data : out std_logic_vector(9 downto 0);
 
@@ -64,12 +60,10 @@ architecture arch_imp of FiltroFir_AXI_v1_0 is
 		port (
 		
 		
-		i_coeff_0 : in std_logic_vector(7 downto 0);
-        i_coeff_1 : in std_logic_vector(7 downto 0);
-        i_coeff_2 : in std_logic_vector(7 downto 0);
-        i_coeff_3 : in std_logic_vector(7 downto 0);
-        i_data : in std_logic_vector(7 downto 0);
-        o_data : out std_logic_vector(9 downto 0);
+		i_coeff_0 : out std_logic_vector(7 downto 0);
+        i_coeff_1 : out std_logic_vector(7 downto 0);
+        i_coeff_2 : out std_logic_vector(7 downto 0);
+        i_coeff_3 : out std_logic_vector(7 downto 0);
         
         
 		S_AXI_ACLK	: in std_logic;
@@ -95,6 +89,27 @@ architecture arch_imp of FiltroFir_AXI_v1_0 is
 		S_AXI_RREADY	: in std_logic
 		);
 	end component FiltroFir_AXI_v1_0_S00_AXI;
+	
+	component Filtro_FIR_4in is
+		port (
+            i_clk        : in  std_logic;
+            i_rstb       : in  std_logic;
+  -- coefficient
+            i_coeff_0    : in  std_logic_vector( 7 downto 0);
+            i_coeff_1    : in  std_logic_vector( 7 downto 0);
+            i_coeff_2    : in  std_logic_vector( 7 downto 0);
+            i_coeff_3    : in  std_logic_vector( 7 downto 0);
+  -- data input
+            i_data       : in  std_logic_vector( 7 downto 0);
+  -- filtered data 
+             o_data       : out std_logic_vector( 9 downto 0)     
+		);
+	end component Filtro_FIR_4in;
+
+signal si_coeff_0    :  std_logic_vector( 7 downto 0);
+signal si_coeff_1    :  std_logic_vector( 7 downto 0);
+signal si_coeff_2    :  std_logic_vector( 7 downto 0);
+signal si_coeff_3    :  std_logic_vector( 7 downto 0);
 
 begin
 
@@ -105,12 +120,11 @@ FiltroFir_AXI_v1_0_S00_AXI_inst : FiltroFir_AXI_v1_0_S00_AXI
 		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH
 	)
 	port map (
-	    i_coeff_0 => i_coeff_0,
-	    i_coeff_1 => i_coeff_1,
-	    i_coeff_2 => i_coeff_2,
-	    i_coeff_3 => i_coeff_3,
-	    i_data => i_data,
-	    o_data => o_data,
+	   
+        i_coeff_0 => si_coeff_0,
+        i_coeff_1 => si_coeff_1,
+        i_coeff_2 => si_coeff_2,
+        i_coeff_3 => si_coeff_3,
 	    S_AXI_ACLK	=> s00_axi_aclk,
 		S_AXI_ARESETN	=> s00_axi_aresetn,
 		S_AXI_AWADDR	=> s00_axi_awaddr,
@@ -135,6 +149,22 @@ FiltroFir_AXI_v1_0_S00_AXI_inst : FiltroFir_AXI_v1_0_S00_AXI
 	);
 
 	-- Add user logic here
+	
+	FiltroFir : Filtro_FIR_4in
+	port map (
+	        i_clk  => s00_axi_aclk,
+            i_rstb => s00_axi_aresetn,
+  -- coefficient
+            i_coeff_0  => si_coeff_0,
+            i_coeff_1  => si_coeff_1,
+            i_coeff_2  => si_coeff_2,
+            i_coeff_3  => si_coeff_3,
+  -- data input
+            i_data => i_data,
+  -- filtered data 
+            o_data => o_data  
+	    
+	);
 
 	-- User logic ends
 

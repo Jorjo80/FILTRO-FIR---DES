@@ -46,6 +46,9 @@ read_vhdl -library "" {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc {{C:/Users/Jorjo80/Desktop/Ordenar Uni/practicas/lab1des/PYNQ-Z1_C.xdc}}
+set_property used_in_implementation false [get_files {{C:/Users/Jorjo80/Desktop/Ordenar Uni/practicas/lab1des/PYNQ-Z1_C.xdc}}]
+
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 

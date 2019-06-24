@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sun Jun 23 11:42:59 2019
+| Date         : Mon Jun 24 21:12:03 2019
 | Host         : DESKTOP-3OCE3Q5 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file FiltroFir_AXI_v1_0_utilization_synth.rpt -pb FiltroFir_AXI_v1_0_utilization_synth.pb
 | Design       : FiltroFir_AXI_v1_0
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  349 |     0 |     53200 |  0.66 |
-|   LUT as Logic          |  349 |     0 |     53200 |  0.66 |
+| Slice LUTs*             |  353 |     0 |     53200 |  0.66 |
+|   LUT as Logic          |  353 |     0 |     53200 |  0.66 |
 |   LUT as Memory         |    0 |     0 |     17400 |  0.00 |
 | Slice Registers         |  352 |     0 |    106400 |  0.33 |
 |   Register as Flip Flop |  352 |     0 |    106400 |  0.33 |
@@ -87,24 +87,24 @@ Table of Contents
 4. IO and GT Specific
 ---------------------
 
-+-----------------------------+------+-------+-----------+--------+
-|          Site Type          | Used | Fixed | Available |  Util% |
-+-----------------------------+------+-------+-----------+--------+
-| Bonded IOB                  |  138 |     0 |       125 | 110.40 |
-| Bonded IPADs                |    0 |     0 |         2 |   0.00 |
-| Bonded IOPADs               |    0 |     0 |       130 |   0.00 |
-| PHY_CONTROL                 |    0 |     0 |         4 |   0.00 |
-| PHASER_REF                  |    0 |     0 |         4 |   0.00 |
-| OUT_FIFO                    |    0 |     0 |        16 |   0.00 |
-| IN_FIFO                     |    0 |     0 |        16 |   0.00 |
-| IDELAYCTRL                  |    0 |     0 |         4 |   0.00 |
-| IBUFDS                      |    0 |     0 |       121 |   0.00 |
-| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |        16 |   0.00 |
-| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |        16 |   0.00 |
-| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       200 |   0.00 |
-| ILOGIC                      |    0 |     0 |       125 |   0.00 |
-| OLOGIC                      |    0 |     0 |       125 |   0.00 |
-+-----------------------------+------+-------+-----------+--------+
++-----------------------------+------+-------+-----------+-------+
+|          Site Type          | Used | Fixed | Available | Util% |
++-----------------------------+------+-------+-----------+-------+
+| Bonded IOB                  |  106 |     0 |       125 | 84.80 |
+| Bonded IPADs                |    0 |     0 |         2 |  0.00 |
+| Bonded IOPADs               |    0 |     0 |       130 |  0.00 |
+| PHY_CONTROL                 |    0 |     0 |         4 |  0.00 |
+| PHASER_REF                  |    0 |     0 |         4 |  0.00 |
+| OUT_FIFO                    |    0 |     0 |        16 |  0.00 |
+| IN_FIFO                     |    0 |     0 |        16 |  0.00 |
+| IDELAYCTRL                  |    0 |     0 |         4 |  0.00 |
+| IBUFDS                      |    0 |     0 |       121 |  0.00 |
+| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |        16 |  0.00 |
+| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |        16 |  0.00 |
+| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       200 |  0.00 |
+| ILOGIC                      |    0 |     0 |       125 |  0.00 |
+| OLOGIC                      |    0 |     0 |       125 |  0.00 |
++-----------------------------+------+-------+-----------+-------+
 
 
 5. Clocking
@@ -151,8 +151,8 @@ Table of Contents
 | LUT2     |  146 |                 LUT |
 | LUT6     |  138 |                 LUT |
 | LUT4     |  120 |                 LUT |
-| IBUF     |   87 |                  IO |
 | CARRY4   |   67 |          CarryLogic |
+| IBUF     |   55 |                  IO |
 | OBUF     |   51 |                  IO |
 | LUT3     |   25 |                 LUT |
 | LUT5     |   24 |                 LUT |
