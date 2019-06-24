@@ -1,0 +1,20 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7z020clg400-1",
+      "name": "design_1",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3"
+    },
+    "design_tree": {
+      "FiltroFir_AXI_0": ""
+    },
+    "components": {
+      "FiltroFir_AXI_0": {
+        "vlnv": "xilinx.com:user:FiltroFir_AXI:1.0",
+        "xci_name": "design_1_FiltroFir_AXI_0_0"
+      }
+    }
+  }
+}

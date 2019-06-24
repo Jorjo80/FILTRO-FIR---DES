@@ -90,6 +90,22 @@ end FiltroFir_AXI_v1_0_S00_AXI;
 
 architecture arch_imp of FiltroFir_AXI_v1_0_S00_AXI is
 
+       component Filtro_FIR_4in is
+		port (
+            i_clk        : in  std_logic;
+            i_rstb       : in  std_logic;
+  -- coefficient
+            i_coeff_0    : in  std_logic_vector( 7 downto 0);
+            i_coeff_1    : in  std_logic_vector( 7 downto 0);
+            i_coeff_2    : in  std_logic_vector( 7 downto 0);
+            i_coeff_3    : in  std_logic_vector( 7 downto 0);
+  -- data input
+            i_data       : in  std_logic_vector( 7 downto 0);
+  -- filtered data 
+             o_data       : out std_logic_vector( 9 downto 0)     
+		);
+	end component Filtro_FIR_4in;
+
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
 	signal axi_awready	: std_logic;
@@ -390,6 +406,25 @@ begin
 
 
 	-- Add user logic here
+		
+
+-- Instantiation of Axi Bus Interface S00_AXI
+FiltroFir : Filtro_FIR_4in
+	port map (
+	        i_clk  => S_AXI_ACLK,
+            i_rstb => S_AXI_ARESETN,
+  -- coefficient
+            i_coeff_0  => i_coeff_0,
+            i_coeff_1  => i_coeff_1,
+            i_coeff_2  => i_coeff_2,
+            i_coeff_3  => i_coeff_3,
+  -- data input
+            i_data => i_data,
+  -- filtered data 
+            o_data => o_data  
+	    
+	);
+    
 
 	-- User logic ends
 
