@@ -2,12 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity FiltroFir_AXI_v1_0_S00_AXI is
+entity axi4_lite_s is
 	generic (
-		-- Users to add parameters here
-
-		-- User parameters ends
-		-- Do not modify the parameters beyond this line
 
 		-- Width of S_AXI data bus
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
@@ -19,7 +15,9 @@ entity FiltroFir_AXI_v1_0_S00_AXI is
         i_coeff_0 : out std_logic_vector(7 downto 0);
         i_coeff_1 : out std_logic_vector(7 downto 0);
         i_coeff_2 : out std_logic_vector(7 downto 0);
-        i_coeff_3 : out std_logic_vector(7 downto 0);	
+        i_coeff_3 : out std_logic_vector(7 downto 0);
+        i_data    : out std_logic_vector(7 downto 0);
+        o_data    : in std_logic_vector(9 downto 0);	
         -- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -392,9 +390,10 @@ begin
 	-- Add user logic here
 		
         i_coeff_0 <= slv_reg0(7 downto 0);
-        i_coeff_1 <= slv_reg1(7 downto 0);
-        i_coeff_2 <= slv_reg2(7 downto 0);
-        i_coeff_3 <= slv_reg3(7 downto 0);
+        i_coeff_1 <= slv_reg0(15 downto 8);
+        i_coeff_2 <= slv_reg0(23 downto 16);
+        i_coeff_3 <= slv_reg0(31 downto 24);
+        i_data    <= slv_reg1(7 downto 0);
 
 	-- User logic ends
 

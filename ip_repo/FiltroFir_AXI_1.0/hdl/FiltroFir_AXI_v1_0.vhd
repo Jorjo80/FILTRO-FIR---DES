@@ -17,9 +17,6 @@ entity FiltroFir_AXI_v1_0 is
 	port (
 		-- Users to add ports here
 
-        i_data : in std_logic_vector(7 downto 0);
-        o_data : out std_logic_vector(9 downto 0);
-
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -64,6 +61,8 @@ architecture arch_imp of FiltroFir_AXI_v1_0 is
         i_coeff_1 : out std_logic_vector(7 downto 0);
         i_coeff_2 : out std_logic_vector(7 downto 0);
         i_coeff_3 : out std_logic_vector(7 downto 0);
+        i_data    : out std_logic_vector(7 downto 0);
+        o_data    : in  std_logic_vector(9 downto 0);
         
         
 		S_AXI_ACLK	: in std_logic;
@@ -110,6 +109,8 @@ signal si_coeff_0    :  std_logic_vector( 7 downto 0);
 signal si_coeff_1    :  std_logic_vector( 7 downto 0);
 signal si_coeff_2    :  std_logic_vector( 7 downto 0);
 signal si_coeff_3    :  std_logic_vector( 7 downto 0);
+signal si_data       :  std_logic_vector( 7 downto 0);
+signal so_data       :  std_logic_vector( 9 downto 0);
 
 begin
 
@@ -125,6 +126,8 @@ FiltroFir_AXI_v1_0_S00_AXI_inst : FiltroFir_AXI_v1_0_S00_AXI
         i_coeff_1 => si_coeff_1,
         i_coeff_2 => si_coeff_2,
         i_coeff_3 => si_coeff_3,
+        i_data => si_data,
+        o_data => so_data,
 	    S_AXI_ACLK	=> s00_axi_aclk,
 		S_AXI_ARESETN	=> s00_axi_aresetn,
 		S_AXI_AWADDR	=> s00_axi_awaddr,
@@ -160,9 +163,9 @@ FiltroFir_AXI_v1_0_S00_AXI_inst : FiltroFir_AXI_v1_0_S00_AXI
             i_coeff_2  => si_coeff_2,
             i_coeff_3  => si_coeff_3,
   -- data input
-            i_data => i_data,
+            i_data => si_data,
   -- filtered data 
-            o_data => o_data  
+            o_data => so_data,
 	    
 	);
 
