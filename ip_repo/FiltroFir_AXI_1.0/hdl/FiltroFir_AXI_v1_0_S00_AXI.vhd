@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity axi4_lite_s is
+entity FiltroFir_AXI_v1_0_S00_AXI is
 	generic (
 
 		-- Width of S_AXI data bus

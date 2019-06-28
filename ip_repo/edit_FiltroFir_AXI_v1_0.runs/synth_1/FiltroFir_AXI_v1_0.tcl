@@ -26,11 +26,6 @@ set_property webtalk.parent_dir H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtro
 set_property parent.project_path H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/edit_FiltroFir_AXI_v1_0.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_repo_paths {
-  h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0
-  h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir/FiltroFir.srcs/sources_1/new
-} [current_project]
-update_ip_catalog
 set_property ip_output_repo h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/edit_FiltroFir_AXI_v1_0.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {

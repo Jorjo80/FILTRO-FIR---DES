@@ -13,8 +13,7 @@ port (
   -- data input
   i_data       : in  std_logic_vector( 7 downto 0);
   -- filtered data 
-  o_data       : out std_logic_vector( 9 downto 0);
-  fir_vld      : out  std_logic
+  o_data       : out std_logic_vector( 9 downto 0)
    );
   
 end entity Filtro_FIR_4in;
@@ -76,10 +75,8 @@ p_output : process (i_rstb,i_clk)
 begin
   if(i_rstb='0') then
     o_data     <= (others=>'0');
-    fir_vld <= '0';
   elsif(rising_edge(i_clk)) then
     o_data     <= std_logic_vector(r_add_st1(17 downto 8));
-    fir_vld <= '1';
   end if;
   
 end process p_output;
