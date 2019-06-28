@@ -1,24 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: Jorge Contreras Ortiz
--- 
--- Create Date: 02.04.2019 20:31:40
--- Design Name: 
--- Module Name: Filtro_FIR_4in - rtl
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -34,7 +13,10 @@ port (
   -- data input
   i_data       : in  std_logic_vector( 7 downto 0);
   -- filtered data 
-  o_data       : out std_logic_vector( 9 downto 0));
+  o_data       : out std_logic_vector( 9 downto 0);
+  fir_vld      : out  std_logic
+   );
+  
 end entity Filtro_FIR_4in;
 
 architecture rtl of Filtro_FIR_4in is
@@ -94,8 +76,11 @@ p_output : process (i_rstb,i_clk)
 begin
   if(i_rstb='0') then
     o_data     <= (others=>'0');
+    fir_vld <= '0';
   elsif(rising_edge(i_clk)) then
     o_data     <= std_logic_vector(r_add_st1(17 downto 8));
+    fir_vld <= '1';
   end if;
+  
 end process p_output;
 end rtl;

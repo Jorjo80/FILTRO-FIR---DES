@@ -266,7 +266,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>7e88fcc3</spirit:value>
+            <spirit:value>5c7e94ed</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -282,7 +282,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>7e88fcc3</spirit:value>
+            <spirit:value>5c7e94ed</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -330,40 +330,6 @@
       </spirit:view>
     </spirit:views>
     <spirit:ports>
-      <spirit:port>
-        <spirit:name>i_data</spirit:name>
-        <spirit:wire>
-          <spirit:direction>in</spirit:direction>
-          <spirit:vector>
-            <spirit:left spirit:format="long">7</spirit:left>
-            <spirit:right spirit:format="long">0</spirit:right>
-          </spirit:vector>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>o_data</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:vector>
-            <spirit:left spirit:format="long">9</spirit:left>
-            <spirit:right spirit:format="long">0</spirit:right>
-          </spirit:vector>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>std_logic_vector</spirit:typeName>
-              <spirit:viewNameRef>xilinx_vhdlsynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_vhdlbehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
       <spirit:port>
         <spirit:name>s00_axi_awaddr</spirit:name>
         <spirit:wire>
@@ -709,17 +675,21 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
       <spirit:file>
+        <spirit:name>c:/Users/Jorjo80/Desktop/Ordenar Uni/practicas/lab1des/PYNQ-Z1_C.xdc</spirit:name>
+        <spirit:userFileType>xdc</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>../../FiltroFir/FiltroFir.srcs/sources_1/new/Codigo.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/FiltroFir_AXI_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:name>c:/Users/Jorjo80/Downloads/axi4_lite_s.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/FiltroFir_AXI_v1_0.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_85645b7a</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_41150e8a</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -729,7 +699,7 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/FiltroFir_AXI_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:name>c:/Users/Jorjo80/Downloads/axi4_lite_s.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -851,9 +821,9 @@
       <xilinx:taxonomies>
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
-      <xilinx:displayName>FiltroFir_AXI_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>3</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-06-24T13:58:18Z</xilinx:coreCreationDateTime>
+      <xilinx:displayName>FiltroFir_AXI</xilinx:displayName>
+      <xilinx:coreRevision>5</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2019-06-28T08:32:59Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@69179442_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@77f6db_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
@@ -883,14 +853,46 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@13aa8f_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@6003ac4e_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@257581a6_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@260c6a7c_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c37ca71_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d09a0b2_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d7bfb4d_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c0480fd_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@741d58e8_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d415515_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@698f1a05_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61ec1_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@547acff2_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@120948a3_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a708b1b_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67934263_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17f3e8d3_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27484ec6_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@bc0daee_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fd4bbfe_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70758a4f_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3887ea0c_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43ff6e58_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71e3270a_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@254fc2f5_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3323ddc8_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1380815e_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@146b2fb_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6833f265_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c79363d_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52045eee_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ef11a22_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d183844_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13a68329_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78f7a59a_ARCHIVE_LOCATION">h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FiltroFir_AXI_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="7a63f3fc"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="27318b11"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="eaf11db2"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="181cf7bc"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="4bdab610"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="6992ea72"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="d0f8c6dc"/>
     </xilinx:packagingInfo>

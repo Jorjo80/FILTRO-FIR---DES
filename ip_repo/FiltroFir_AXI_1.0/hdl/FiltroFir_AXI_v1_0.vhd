@@ -49,7 +49,7 @@ end FiltroFir_AXI_v1_0;
 architecture arch_imp of FiltroFir_AXI_v1_0 is
 
 	-- component declaration
-	component FiltroFir_AXI_v1_0_S00_AXI is
+	component axi4_lite_s is
 		generic (
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
 		C_S_AXI_ADDR_WIDTH	: integer	:= 4
@@ -63,6 +63,7 @@ architecture arch_imp of FiltroFir_AXI_v1_0 is
         i_coeff_3 : out std_logic_vector(7 downto 0);
         i_data    : out std_logic_vector(7 downto 0);
         o_data    : in  std_logic_vector(9 downto 0);
+        fir_vld   : in  std_logic;
         
         
 		S_AXI_ACLK	: in std_logic;
@@ -87,7 +88,7 @@ architecture arch_imp of FiltroFir_AXI_v1_0 is
 		S_AXI_RVALID	: out std_logic;
 		S_AXI_RREADY	: in std_logic
 		);
-	end component FiltroFir_AXI_v1_0_S00_AXI;
+	end component axi4_lite_s;
 	
 	component Filtro_FIR_4in is
 		port (
@@ -101,7 +102,8 @@ architecture arch_imp of FiltroFir_AXI_v1_0 is
   -- data input
             i_data       : in  std_logic_vector( 7 downto 0);
   -- filtered data 
-             o_data       : out std_logic_vector( 9 downto 0)     
+             fir_vld     : out std_logic;
+             o_data      : out std_logic_vector( 9 downto 0)     
 		);
 	end component Filtro_FIR_4in;
 
@@ -111,11 +113,12 @@ signal si_coeff_2    :  std_logic_vector( 7 downto 0);
 signal si_coeff_3    :  std_logic_vector( 7 downto 0);
 signal si_data       :  std_logic_vector( 7 downto 0);
 signal so_data       :  std_logic_vector( 9 downto 0);
+signal sfir_vld      :  std_logic;
 
 begin
 
 -- Instantiation of Axi Bus Interface S00_AXI
-FiltroFir_AXI_v1_0_S00_AXI_inst : FiltroFir_AXI_v1_0_S00_AXI
+FiltroFir_AXI : axi4_lite_s
 	generic map (
 		C_S_AXI_DATA_WIDTH	=> C_S00_AXI_DATA_WIDTH,
 		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH
@@ -128,6 +131,7 @@ FiltroFir_AXI_v1_0_S00_AXI_inst : FiltroFir_AXI_v1_0_S00_AXI
         i_coeff_3 => si_coeff_3,
         i_data => si_data,
         o_data => so_data,
+        fir_vld => sfir_vld,
 	    S_AXI_ACLK	=> s00_axi_aclk,
 		S_AXI_ARESETN	=> s00_axi_aresetn,
 		S_AXI_AWADDR	=> s00_axi_awaddr,
@@ -165,7 +169,8 @@ FiltroFir_AXI_v1_0_S00_AXI_inst : FiltroFir_AXI_v1_0_S00_AXI
   -- data input
             i_data => si_data,
   -- filtered data 
-            o_data => so_data,
+            fir_vld => sfir_vld,
+            o_data  => so_data
 	    
 	);
 
