@@ -284,3 +284,172 @@ Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
 Running DRC as a precondition to command route_design
 INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+Checksum: PlaceDB: b9bf969 ConstDB: 0 ShapeSum: 365a063f RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 125730c46
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:32 . Memory (MB): peak = 1503.059 ; gain = 138.313
+Post Restoration Checksum: NetGraph: cd878fc7 NumContArr: 57eb7c7f Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+INFO: [Route 35-64] No timing constraints were detected. The router will operate in resource-optimization mode.
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 125730c46
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:33 . Memory (MB): peak = 1509.055 ; gain = 144.309
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 125730c46
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:33 . Memory (MB): peak = 1509.055 ; gain = 144.309
+ Number of Nodes with overlaps = 0
+Phase 2 Router Initialization | Checksum: f0de32c1
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:33 . Memory (MB): peak = 1528.164 ; gain = 163.418
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 10fc8842f
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1528.164 ; gain = 163.418
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 56
+ Number of Nodes with overlaps = 0
+Phase 4.1 Global Iteration 0 | Checksum: 10227240a
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1528.164 ; gain = 163.418
+Phase 4 Rip-up And Reroute | Checksum: 10227240a
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1528.164 ; gain = 163.418
+
+Phase 5 Delay and Skew Optimization
+Phase 5 Delay and Skew Optimization | Checksum: 10227240a
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1528.164 ; gain = 163.418
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+Phase 6.1 Hold Fix Iter | Checksum: 10227240a
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1528.164 ; gain = 163.418
+Phase 6 Post Hold Fix | Checksum: 10227240a
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1528.164 ; gain = 163.418
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.1866 %
+  Global Horizontal Routing Utilization  = 0.130325 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 38.7387%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 26.1261%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 23.5294%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 32.3529%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 7 Route finalize | Checksum: 10227240a
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1528.164 ; gain = 163.418
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 10227240a
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1528.164 ; gain = 163.418
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: d88865dc
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1528.164 ; gain = 163.418
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1528.164 ; gain = 163.418
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+54 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:35 . Memory (MB): peak = 1528.164 ; gain = 163.418
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1528.164 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1528.164 ; gain = 0.000
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.198 . Memory (MB): peak = 1528.164 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/edit_FiltroFir_AXI_v1_0.runs/impl_1/FiltroFir_AXI_v1_0_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file FiltroFir_AXI_v1_0_drc_routed.rpt -pb FiltroFir_AXI_v1_0_drc_routed.pb -rpx FiltroFir_AXI_v1_0_drc_routed.rpx
+Command: report_drc -file FiltroFir_AXI_v1_0_drc_routed.rpt -pb FiltroFir_AXI_v1_0_drc_routed.pb -rpx FiltroFir_AXI_v1_0_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/edit_FiltroFir_AXI_v1_0.runs/impl_1/FiltroFir_AXI_v1_0_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file FiltroFir_AXI_v1_0_methodology_drc_routed.rpt -pb FiltroFir_AXI_v1_0_methodology_drc_routed.pb -rpx FiltroFir_AXI_v1_0_methodology_drc_routed.rpx
+Command: report_methodology -file FiltroFir_AXI_v1_0_methodology_drc_routed.rpt -pb FiltroFir_AXI_v1_0_methodology_drc_routed.pb -rpx FiltroFir_AXI_v1_0_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/edit_FiltroFir_AXI_v1_0.runs/impl_1/FiltroFir_AXI_v1_0_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file FiltroFir_AXI_v1_0_power_routed.rpt -pb FiltroFir_AXI_v1_0_power_summary_routed.pb -rpx FiltroFir_AXI_v1_0_power_routed.rpx
+Command: report_power -file FiltroFir_AXI_v1_0_power_routed.rpt -pb FiltroFir_AXI_v1_0_power_summary_routed.pb -rpx FiltroFir_AXI_v1_0_power_routed.rpx
+WARNING: [Power 33-232] No user defined clocks were found in the design!
+Resolution: Please specify clocks using create_clock/create_generated_clock for sequential elements. For pure combinatorial circuits, please specify a virtual clock, otherwise the vectorless estimation might be inaccurate
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+66 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file FiltroFir_AXI_v1_0_route_status.rpt -pb FiltroFir_AXI_v1_0_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file FiltroFir_AXI_v1_0_timing_summary_routed.rpt -pb FiltroFir_AXI_v1_0_timing_summary_routed.pb -rpx FiltroFir_AXI_v1_0_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file FiltroFir_AXI_v1_0_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file FiltroFir_AXI_v1_0_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file FiltroFir_AXI_v1_0_bus_skew_routed.rpt -pb FiltroFir_AXI_v1_0_bus_skew_routed.pb -rpx FiltroFir_AXI_v1_0_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 28 16:11:40 2019...
