@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1561731018">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1561977877">
   <File Type="BITSTR-BMM" Name="FiltroFir_AXI_v1_0_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="FiltroFir_AXI_v1_0_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="FiltroFir_AXI_v1_0_timing_summary_init.rpt"/>
@@ -85,13 +85,20 @@
     </File>
     <File Path="$PPRDIR/FiltroFir_AXI_1.0/hdl/FiltroFir_AXI_v1_0.vhd">
       <FileInfo>
-        <Attr Name="Library" Val=""/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/FiltroFir_AXI_1.0/component.xml">
       <FileInfo SFType="IPXACT"/>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
@@ -101,7 +108,7 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="C:/Users/Jorjo80/Desktop/Ordenar Uni/practicas/lab1des/PYNQ-Z1_C.xdc">
+    <File Path="$PPRDIR/PYNQ-Z1_C.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -118,7 +125,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

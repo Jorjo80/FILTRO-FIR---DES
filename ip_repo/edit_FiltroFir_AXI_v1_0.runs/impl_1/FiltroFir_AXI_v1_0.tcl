@@ -61,91 +61,23 @@ proc step_failed { step } {
 }
 
 
-start_step init_design
-set ACTIVE_STEP init_design
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
 set rc [catch {
-  create_msg_db init_design.pb
-  create_project -in_memory -part xc7z020clg400-1
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
+  create_msg_db write_bitstream.pb
+  open_checkpoint FiltroFir_AXI_v1_0_routed.dcp
   set_property webtalk.parent_dir H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/edit_FiltroFir_AXI_v1_0.cache/wt [current_project]
-  set_property parent.project_path H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/edit_FiltroFir_AXI_v1_0.xpr [current_project]
-  set_property ip_output_repo H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/edit_FiltroFir_AXI_v1_0.cache/ip [current_project]
-  set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/edit_FiltroFir_AXI_v1_0.runs/synth_1/FiltroFir_AXI_v1_0.dcp
-  read_xdc {{C:/Users/Jorjo80/Desktop/Ordenar Uni/practicas/lab1des/PYNQ-Z1_C.xdc}}
-  link_design -top FiltroFir_AXI_v1_0 -part xc7z020clg400-1
-  close_msg_db -file init_design.pb
+  catch { write_mem_info -force FiltroFir_AXI_v1_0.mmi }
+  write_bitstream -force FiltroFir_AXI_v1_0.bit 
+  catch {write_debug_probes -quiet -force FiltroFir_AXI_v1_0}
+  catch {file copy -force FiltroFir_AXI_v1_0.ltx debug_nets.ltx}
+  close_msg_db -file write_bitstream.pb
 } RESULT]
 if {$rc} {
-  step_failed init_design
+  step_failed write_bitstream
   return -code error $RESULT
 } else {
-  end_step init_design
-  unset ACTIVE_STEP 
-}
-
-start_step opt_design
-set ACTIVE_STEP opt_design
-set rc [catch {
-  create_msg_db opt_design.pb
-  opt_design 
-  write_checkpoint -force FiltroFir_AXI_v1_0_opt.dcp
-  create_report "impl_1_opt_report_drc_0" "report_drc -file FiltroFir_AXI_v1_0_drc_opted.rpt -pb FiltroFir_AXI_v1_0_drc_opted.pb -rpx FiltroFir_AXI_v1_0_drc_opted.rpx"
-  close_msg_db -file opt_design.pb
-} RESULT]
-if {$rc} {
-  step_failed opt_design
-  return -code error $RESULT
-} else {
-  end_step opt_design
-  unset ACTIVE_STEP 
-}
-
-start_step place_design
-set ACTIVE_STEP place_design
-set rc [catch {
-  create_msg_db place_design.pb
-  if { [llength [get_debug_cores -quiet] ] > 0 }  { 
-    implement_debug_core 
-  } 
-  place_design 
-  write_checkpoint -force FiltroFir_AXI_v1_0_placed.dcp
-  create_report "impl_1_place_report_io_0" "report_io -file FiltroFir_AXI_v1_0_io_placed.rpt"
-  create_report "impl_1_place_report_utilization_0" "report_utilization -file FiltroFir_AXI_v1_0_utilization_placed.rpt -pb FiltroFir_AXI_v1_0_utilization_placed.pb"
-  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file FiltroFir_AXI_v1_0_control_sets_placed.rpt"
-  close_msg_db -file place_design.pb
-} RESULT]
-if {$rc} {
-  step_failed place_design
-  return -code error $RESULT
-} else {
-  end_step place_design
-  unset ACTIVE_STEP 
-}
-
-start_step route_design
-set ACTIVE_STEP route_design
-set rc [catch {
-  create_msg_db route_design.pb
-  route_design 
-  write_checkpoint -force FiltroFir_AXI_v1_0_routed.dcp
-  create_report "impl_1_route_report_drc_0" "report_drc -file FiltroFir_AXI_v1_0_drc_routed.rpt -pb FiltroFir_AXI_v1_0_drc_routed.pb -rpx FiltroFir_AXI_v1_0_drc_routed.rpx"
-  create_report "impl_1_route_report_methodology_0" "report_methodology -file FiltroFir_AXI_v1_0_methodology_drc_routed.rpt -pb FiltroFir_AXI_v1_0_methodology_drc_routed.pb -rpx FiltroFir_AXI_v1_0_methodology_drc_routed.rpx"
-  create_report "impl_1_route_report_power_0" "report_power -file FiltroFir_AXI_v1_0_power_routed.rpt -pb FiltroFir_AXI_v1_0_power_summary_routed.pb -rpx FiltroFir_AXI_v1_0_power_routed.rpx"
-  create_report "impl_1_route_report_route_status_0" "report_route_status -file FiltroFir_AXI_v1_0_route_status.rpt -pb FiltroFir_AXI_v1_0_route_status.pb"
-  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file FiltroFir_AXI_v1_0_timing_summary_routed.rpt -pb FiltroFir_AXI_v1_0_timing_summary_routed.pb -rpx FiltroFir_AXI_v1_0_timing_summary_routed.rpx -warn_on_violation "
-  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file FiltroFir_AXI_v1_0_incremental_reuse_routed.rpt"
-  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file FiltroFir_AXI_v1_0_clock_utilization_routed.rpt"
-  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file FiltroFir_AXI_v1_0_bus_skew_routed.rpt -pb FiltroFir_AXI_v1_0_bus_skew_routed.pb -rpx FiltroFir_AXI_v1_0_bus_skew_routed.rpx"
-  close_msg_db -file route_design.pb
-} RESULT]
-if {$rc} {
-  write_checkpoint -force FiltroFir_AXI_v1_0_routed_error.dcp
-  step_failed route_design
-  return -code error $RESULT
-} else {
-  end_step route_design
+  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 

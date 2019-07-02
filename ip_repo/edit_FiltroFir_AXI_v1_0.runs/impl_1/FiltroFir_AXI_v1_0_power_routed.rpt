@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Fri Jun 28 16:11:40 2019
+| Date             : Mon Jul  1 12:45:56 2019
 | Host             : DESKTOP-3OCE3Q5 running 64-bit major release  (build 9200)
 | Command          : report_power -file FiltroFir_AXI_v1_0_power_routed.rpt -pb FiltroFir_AXI_v1_0_power_summary_routed.pb -rpx FiltroFir_AXI_v1_0_power_routed.rpx
 | Design           : FiltroFir_AXI_v1_0
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 4.741        |
+| Total On-Chip Power (W)  | 4.062        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 4.453        |
-| Device Static (W)        | 0.288        |
+| Dynamic (W)              | 3.824        |
+| Device Static (W)        | 0.237        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 30.3         |
-| Junction Temperature (C) | 79.7         |
+| Max Ambient (C)          | 38.2         |
+| Junction Temperature (C) | 71.8         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.388 |      880 |       --- |             --- |
-|   LUT as Logic |     0.230 |      353 |     53200 |            0.66 |
-|   CARRY4       |     0.091 |       67 |     13300 |            0.50 |
-|   Register     |     0.060 |      352 |    106400 |            0.33 |
+| Slice Logic    |     0.062 |      880 |       --- |             --- |
+|   LUT as Logic |     0.052 |      353 |     53200 |            0.66 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
+|   Register     |     0.004 |      352 |    106400 |            0.33 |
+|   CARRY4       |    <0.001 |       67 |     13300 |            0.50 |
 |   Others       |     0.000 |        4 |       --- |             --- |
-| Signals        |     0.877 |      704 |       --- |             --- |
-| I/O            |     3.189 |       88 |       125 |           70.40 |
-| Static Power   |     0.288 |          |           |                 |
-| Total          |     4.741 |          |           |                 |
+| Signals        |     0.541 |      704 |       --- |             --- |
+| I/O            |     3.222 |       88 |       125 |           70.40 |
+| Static Power   |     0.237 |          |           |                 |
+| Total          |     4.062 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,20 +71,20 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     1.510 |       1.448 |      0.062 |
-| Vccaux    |       1.800 |     0.280 |       0.246 |      0.034 |
+| Vccint    |       1.000 |     0.832 |       0.787 |      0.045 |
+| Vccaux    |       1.800 |     0.277 |       0.249 |      0.028 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |     1.424 |       1.423 |      0.001 |
+| Vcco18    |       1.800 |     1.440 |       1.439 |      0.001 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.004 |       0.000 |      0.004 |
+| Vccbram   |       1.000 |     0.003 |       0.000 |      0.003 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.099 |       0.000 |      0.099 |
+| Vccpint   |       1.000 |     0.076 |       0.000 |      0.076 |
 | Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |
 | Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -145,9 +145,8 @@ Table of Contents
 +--------------------+-----------+
 | Name               | Power (W) |
 +--------------------+-----------+
-| FiltroFir_AXI_v1_0 |     4.453 |
-|   FiltroFir        |     0.663 |
-|   FiltroFir_AXI    |     0.170 |
+| FiltroFir_AXI_v1_0 |     3.824 |
+|   FiltroFir_AXI    |     0.157 |
 +--------------------+-----------+
 
 

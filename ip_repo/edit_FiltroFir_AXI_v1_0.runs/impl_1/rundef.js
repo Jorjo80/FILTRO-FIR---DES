@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 // pre-commands:
-ISETouchFile( "init_design", "begin" );
+ISETouchFile( "write_bitstream", "begin" );
 ISEStep( "vivado",
          "-log FiltroFir_AXI_v1_0.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source FiltroFir_AXI_v1_0.tcl -notrace" );
 
