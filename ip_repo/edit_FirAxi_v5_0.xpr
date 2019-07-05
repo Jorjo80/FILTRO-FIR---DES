@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="39" Path="h:/jorge/upm/master/1ercuatri/des/trabajo_filtrofir/filtro-fir---des/ip_repo/edit_FirAxi_v4_0.xpr">
+<Project Version="7" Minor="39" Path="h:/jorge/upm/master/1ercuatri/des/trabajo_filtrofir/filtro-fir---des/ip_repo/edit_FirAxi_v5_0.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="3effed669430485eb8e0174e25fe7a2e"/>
+    <Option Name="Id" Val="3d8cc4693f39497093632133533a0702"/>
     <Option Name="Part" Val="xc7z020clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -24,7 +24,6 @@
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/FirAxi_5.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../../Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FirAxi_4.0"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
@@ -63,69 +62,45 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/CodigoFir.vhd">
+      <File Path="$PPRDIR/../../../../../../../../Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FirAxi_5.0/hdl/Fir.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/CodigoFir.vhd"/>
-          <Attr Name="ImportTime" Val="1562316483"/>
           <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/FirAxi_v4_0_S00_AXI.vhd">
+      <File Path="$PPRDIR/FirAxi_5.0/hdl/FirAxi_v5_0_S00_AXI.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/FirAxi_v4_0_S00_AXI.vhd"/>
-          <Attr Name="ImportTime" Val="1562316749"/>
+          <Attr Name="Library" Val=""/>
           <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/FirAxi_v4_0.vhd">
+      <File Path="$PPRDIR/FirAxi_5.0/hdl/FirAxi_v5_0.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/FirAxi_v4_0.vhd"/>
-          <Attr Name="ImportTime" Val="1562316333"/>
+          <Attr Name="Library" Val=""/>
           <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/FirAxi_4.0/component.xml">
-        <FileInfo SFType="IPXACT">
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FirAxi_4.0/component.xml"/>
-          <Attr Name="ImportTime" Val="1562319744"/>
-        </FileInfo>
+      <File Path="$PPRDIR/FirAxi_5.0/component.xml">
+        <FileInfo SFType="IPXACT"/>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="FirAxi_v4_0"/>
-        <Option Name="TopAutoSet" Val="TRUE"/>
+        <Option Name="TopModule" Val="FirAxi_v5_0"/>
+        <Option Name="TopRTLFile" Val="$PPRDIR/FirAxi_5.0/hdl/FirAxi_v5_0.vhd"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
-      <File Path="$PSRCDIR/constrs_1/imports/FILTRO-FIR---DES/PYNQ-Z1_C.xdc">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/PYNQ-Z1_C.xdc"/>
-          <Attr Name="ImportTime" Val="1561976108"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
       <Config>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
-      <File Path="$PSRCDIR/sim_1/new/component.mem">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
-        <Option Name="SrcSet" Val=""/>
+        <Option Name="SrcSet" Val="sources_1"/>
       </Config>
     </FileSet>
     <FileSet Name="utils_1" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
@@ -154,13 +129,14 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="10">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z020clg400-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" IncludeInArchive="true">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z020clg400-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
           <Desc>Vivado Synthesis Defaults</Desc>
         </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
