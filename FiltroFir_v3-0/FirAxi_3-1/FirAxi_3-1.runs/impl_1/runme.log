@@ -1,4 +1,0 @@
-
-*** Running vivado
-    with args -log FiltroFirAxi_v3_0.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source FiltroFirAxi_v3_0.tcl -notrace
-
