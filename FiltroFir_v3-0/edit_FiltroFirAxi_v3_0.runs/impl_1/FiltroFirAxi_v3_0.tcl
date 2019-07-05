@@ -68,16 +68,16 @@ set rc [catch {
   create_project -in_memory -part xc7z020clg400-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir h:/jorge/upm/master/1ercuatri/des/trabajo_filtrofir/filtro-fir---des/filtrofir_v3-0/edit_FiltroFirAxi_v3_0.cache/wt [current_project]
-  set_property parent.project_path h:/jorge/upm/master/1ercuatri/des/trabajo_filtrofir/filtro-fir---des/filtrofir_v3-0/edit_FiltroFirAxi_v3_0.xpr [current_project]
+  set_property webtalk.parent_dir H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir_v3-0/edit_FiltroFirAxi_v3_0.cache/wt [current_project]
+  set_property parent.project_path H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir_v3-0/edit_FiltroFirAxi_v3_0.xpr [current_project]
   set_property ip_repo_paths {
   H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir_v3-0/FiltroFirAxi_3.0
   H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir_v3-0/FiltroFir_v3.0_3.0
 } [current_project]
   update_ip_catalog
-  set_property ip_output_repo h:/jorge/upm/master/1ercuatri/des/trabajo_filtrofir/filtro-fir---des/filtrofir_v3-0/edit_FiltroFirAxi_v3_0.cache/ip [current_project]
+  set_property ip_output_repo H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir_v3-0/edit_FiltroFirAxi_v3_0.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet h:/jorge/upm/master/1ercuatri/des/trabajo_filtrofir/filtro-fir---des/filtrofir_v3-0/edit_FiltroFirAxi_v3_0.runs/synth_1/FiltroFirAxi_v3_0.dcp
+  add_files -quiet H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir_v3-0/edit_FiltroFirAxi_v3_0.runs/synth_1/FiltroFirAxi_v3_0.dcp
   link_design -top FiltroFirAxi_v3_0 -part xc7z020clg400-1
   close_msg_db -file init_design.pb
 } RESULT]
