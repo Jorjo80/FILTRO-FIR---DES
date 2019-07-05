@@ -33,10 +33,10 @@ set_property ip_repo_paths {
 update_ip_catalog
 set_property ip_output_repo h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir_v3-0/edit_FiltroFirAxi_v3_0.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir_v3-0/FiltroFirAxi_3.0/src/CodigoFir.vhd
+read_vhdl -library xil_defaultlib H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir_v3-0/edit_FiltroFirAxi_v3_0.srcs/sources_1/imports/FiltroFirAxi_3.0/src/CodigoFir.vhd
 read_vhdl -library "" {
-  H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir_v3-0/FiltroFirAxi_3.0/hdl/FiltroFirAxi_v3_0_S00_AXI.vhd
-  H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir_v3-0/FiltroFirAxi_3.0/hdl/FiltroFirAxi_v3_0.vhd
+  H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir_v3-0/edit_FiltroFirAxi_v3_0.srcs/sources_1/imports/FiltroFirAxi_3.0/hdl/FiltroFirAxi_v3_0_S00_AXI.vhd
+  H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/FiltroFir_v3-0/edit_FiltroFirAxi_v3_0.srcs/sources_1/imports/FiltroFirAxi_3.0/hdl/FiltroFirAxi_v3_0.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

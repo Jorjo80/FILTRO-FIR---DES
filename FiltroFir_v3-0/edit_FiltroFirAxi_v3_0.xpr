@@ -63,33 +63,42 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/FiltroFirAxi_3.0/src/CodigoFir.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/FiltroFirAxi_3.0/src/CodigoFir.vhd">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/FiltroFirAxi_3.0/src/CodigoFir.vhd"/>
+          <Attr Name="ImportTime" Val="1562276891"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/FiltroFirAxi_3.0/hdl/FiltroFirAxi_v3_0_S00_AXI.vhd">
-        <FileInfo>
-          <Attr Name="Library" Val=""/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/FiltroFirAxi_3.0/hdl/FiltroFirAxi_v3_0.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/FiltroFirAxi_3.0/hdl/FiltroFirAxi_v3_0_S00_AXI.vhd">
         <FileInfo>
           <Attr Name="Library" Val=""/>
+          <Attr Name="ImportPath" Val="$PPRDIR/FiltroFirAxi_3.0/hdl/FiltroFirAxi_v3_0_S00_AXI.vhd"/>
+          <Attr Name="ImportTime" Val="1562276664"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/FiltroFirAxi_3.0/component.xml">
-        <FileInfo SFType="IPXACT"/>
+      <File Path="$PSRCDIR/sources_1/imports/FiltroFirAxi_3.0/hdl/FiltroFirAxi_v3_0.vhd">
+        <FileInfo>
+          <Attr Name="Library" Val=""/>
+          <Attr Name="ImportPath" Val="$PPRDIR/FiltroFirAxi_3.0/hdl/FiltroFirAxi_v3_0.vhd"/>
+          <Attr Name="ImportTime" Val="1562275300"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/FiltroFirAxi_3.0/component.xml">
+        <FileInfo SFType="IPXACT">
+          <Attr Name="ImportPath" Val="$PPRDIR/FiltroFirAxi_3.0/component.xml"/>
+          <Attr Name="ImportTime" Val="1562276925"/>
+        </FileInfo>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="FiltroFirAxi_v3_0"/>
-        <Option Name="TopRTLFile" Val="$PPRDIR/FiltroFirAxi_3.0/hdl/FiltroFirAxi_v3_0.vhd"/>
+        <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -144,7 +153,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
@@ -157,7 +166,6 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
