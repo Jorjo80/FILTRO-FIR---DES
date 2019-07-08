@@ -85,7 +85,7 @@ end FirAxi_v5_0_S00_AXI;
 
 architecture arch_imp of FirAxi_v5_0_S00_AXI is
 
-	--- AXI4LITE signals
+	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
 	signal axi_awready	: std_logic;
 	signal axi_wready	: std_logic;
@@ -112,31 +112,11 @@ architecture arch_imp of FirAxi_v5_0_S00_AXI is
 	signal slv_reg1	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	signal slv_reg2	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	signal slv_reg3	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
-	signal so_data  :std_logic_vector(9 downto 0);
-	signal s_valid  :std_logic;
 	signal slv_reg_rden	: std_logic;
 	signal slv_reg_wren	: std_logic;
-	signal valid_data   : std_logic;
 	signal reg_data_out	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	signal byte_index	: integer;
 	signal aw_en	: std_logic;
-	
-	component Filtro_FIR_4in is
-		port (
-		i_clk        : in  std_logic;
-        i_rstb       : in  std_logic;
-  -- coefficient
-        i_coeff_0    : in  std_logic_vector( 7 downto 0);
-        i_coeff_1    : in  std_logic_vector( 7 downto 0);
-        i_coeff_2    : in  std_logic_vector( 7 downto 0);
-        i_coeff_3    : in  std_logic_vector( 7 downto 0);
-  -- data input
-        i_data       : in  std_logic_vector( 7 downto 0);
-        fir_valid    : out std_logic;
-  -- filtered data 
-        o_data       : out std_logic_vector( 9 downto 0)
-		);
-	end component Filtro_FIR_4in;
 
 begin
 	-- I/O Connections assignments
@@ -366,14 +346,20 @@ begin
 	-- and the slave is ready to accept the read address.
 	slv_reg_rden <= axi_arready and S_AXI_ARVALID and (not axi_rvalid) ;
 
-	process (s_valid, so_data, axi_araddr, S_AXI_ARESETN, slv_reg_rden)
+	process (slv_reg0, slv_reg1, slv_reg2, slv_reg3, axi_araddr, S_AXI_ARESETN, slv_reg_rden)
+	variable loc_addr :std_logic_vector(OPT_MEM_ADDR_BITS downto 0);
 	begin
 	    -- Address decoding for reading registers
-	    case s_valid is
-	      when '0' =>
-	        reg_data_out <= (others => '0');
-	      when '1' =>
-	        reg_data_out(9 downto 0) <= so_data;
+	    loc_addr := axi_araddr(ADDR_LSB + OPT_MEM_ADDR_BITS downto ADDR_LSB);
+	    case loc_addr is
+	      when b"00" =>
+	        reg_data_out <= slv_reg0;
+	      when b"01" =>
+	        reg_data_out <= slv_reg1;
+	      when b"10" =>
+	        reg_data_out <= slv_reg2;
+	      when b"11" =>
+	        reg_data_out <= slv_reg3;
 	      when others =>
 	        reg_data_out  <= (others => '0');
 	    end case;
@@ -400,24 +386,6 @@ begin
 
 	-- Add user logic here
 
-
-
--- Instantiation of Axi Bus Interface S00_AXI
-FiltroFirAxi_inst : Filtro_FIR_4in
-	port map (
-		i_clk        => S_AXI_ACLK,
-        i_rstb       => S_AXI_ARESETN,
-  -- coefficient
-        i_coeff_0    => slv_reg0(7 downto 0),
-        i_coeff_1    => slv_reg0(15 downto 8),
-        i_coeff_2    => slv_reg0(23 downto 16),
-        i_coeff_3    => slv_reg0(31 downto 24),
-  -- data input
-        i_data       => slv_reg1(7 downto 0),
-        fir_valid    => s_valid,
-  -- filtered data 
-        o_data       => so_data
-	);
 	-- User logic ends
 
 end arch_imp;
