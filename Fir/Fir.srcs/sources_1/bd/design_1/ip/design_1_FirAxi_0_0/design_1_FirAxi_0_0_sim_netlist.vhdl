@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Mon Jul  8 10:51:10 2019
+-- Date        : Mon Jul  8 11:29:17 2019
 -- Host        : DESKTOP-3OCE3Q5 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/Fir/Fir.srcs/sources_1/bd/design_1/ip/design_1_FirAxi_0_0/design_1_FirAxi_0_0_sim_netlist.vhdl
@@ -17,10 +17,10 @@ use UNISIM.VCOMPONENTS.ALL;
 entity design_1_FirAxi_0_0_Filtro_FIR_4in is
   port (
     SR : out STD_LOGIC_VECTOR ( 0 to 0 );
-    \o_data_reg[9]_0\ : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    D : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    s00_axi_aclk : in STD_LOGIC;
     s00_axi_aresetn : in STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_aclk : in STD_LOGIC;
     \p_data_reg[0][7]_0\ : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
@@ -30,6 +30,8 @@ end design_1_FirAxi_0_0_Filtro_FIR_4in;
 architecture STRUCTURE of design_1_FirAxi_0_0_Filtro_FIR_4in is
   signal A : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal \^sr\ : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal fir_valid : STD_LOGIC;
+  signal o_data : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal p_0_in : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal \p_data_reg_n_0_[1][0]\ : STD_LOGIC;
   signal \p_data_reg_n_0_[1][1]\ : STD_LOGIC;
@@ -874,69 +876,72 @@ architecture STRUCTURE of design_1_FirAxi_0_0_Filtro_FIR_4in is
   signal \NLW_r_mult_reg[3][15]_i_1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
   signal \NLW_r_mult_reg[3][15]_i_2_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
   signal \NLW_r_mult_reg[3][15]_i_2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
-  attribute HLUTNM : string;
-  attribute HLUTNM of \r_mult[0][10]_i_2\ : label is "lutpair15";
-  attribute HLUTNM of \r_mult[0][10]_i_3\ : label is "lutpair14";
   attribute SOFT_HLUTNM : string;
+  attribute SOFT_HLUTNM of \axi_rdata[0]_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \axi_rdata[1]_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \axi_rdata[2]_i_1\ : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \axi_rdata[3]_i_1\ : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \axi_rdata[4]_i_1\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \axi_rdata[5]_i_1\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \axi_rdata[6]_i_1\ : label is "soft_lutpair23";
+  attribute SOFT_HLUTNM of \axi_rdata[7]_i_1\ : label is "soft_lutpair23";
+  attribute SOFT_HLUTNM of \axi_rdata[8]_i_1\ : label is "soft_lutpair24";
+  attribute SOFT_HLUTNM of \axi_rdata[9]_i_2\ : label is "soft_lutpair24";
+  attribute HLUTNM : string;
+  attribute HLUTNM of \r_mult[0][10]_i_3\ : label is "lutpair11";
   attribute SOFT_HLUTNM of \r_mult[0][10]_i_35\ : label is "soft_lutpair18";
   attribute SOFT_HLUTNM of \r_mult[0][10]_i_36\ : label is "soft_lutpair17";
   attribute SOFT_HLUTNM of \r_mult[0][10]_i_37\ : label is "soft_lutpair15";
   attribute SOFT_HLUTNM of \r_mult[0][10]_i_38\ : label is "soft_lutpair16";
   attribute SOFT_HLUTNM of \r_mult[0][10]_i_39\ : label is "soft_lutpair19";
-  attribute HLUTNM of \r_mult[0][10]_i_4\ : label is "lutpair13";
-  attribute HLUTNM of \r_mult[0][10]_i_5\ : label is "lutpair12";
-  attribute HLUTNM of \r_mult[0][10]_i_7\ : label is "lutpair15";
-  attribute HLUTNM of \r_mult[0][10]_i_8\ : label is "lutpair14";
-  attribute HLUTNM of \r_mult[0][10]_i_9\ : label is "lutpair13";
+  attribute HLUTNM of \r_mult[0][10]_i_4\ : label is "lutpair10";
+  attribute HLUTNM of \r_mult[0][10]_i_5\ : label is "lutpair9";
+  attribute HLUTNM of \r_mult[0][10]_i_8\ : label is "lutpair11";
+  attribute HLUTNM of \r_mult[0][10]_i_9\ : label is "lutpair10";
   attribute SOFT_HLUTNM of \r_mult[0][14]_i_28\ : label is "soft_lutpair18";
   attribute SOFT_HLUTNM of \r_mult[0][14]_i_29\ : label is "soft_lutpair17";
   attribute SOFT_HLUTNM of \r_mult[0][14]_i_30\ : label is "soft_lutpair19";
   attribute SOFT_HLUTNM of \r_mult[0][14]_i_31\ : label is "soft_lutpair16";
   attribute SOFT_HLUTNM of \r_mult[0][2]_i_9\ : label is "soft_lutpair15";
-  attribute HLUTNM of \r_mult[0][6]_i_2\ : label is "lutpair19";
-  attribute HLUTNM of \r_mult[0][6]_i_5\ : label is "lutpair12";
-  attribute HLUTNM of \r_mult[0][6]_i_6\ : label is "lutpair19";
-  attribute HLUTNM of \r_mult[1][10]_i_2\ : label is "lutpair11";
-  attribute HLUTNM of \r_mult[1][10]_i_3\ : label is "lutpair10";
+  attribute HLUTNM of \r_mult[0][6]_i_2\ : label is "lutpair15";
+  attribute HLUTNM of \r_mult[0][6]_i_5\ : label is "lutpair9";
+  attribute HLUTNM of \r_mult[0][6]_i_6\ : label is "lutpair15";
+  attribute HLUTNM of \r_mult[1][10]_i_3\ : label is "lutpair8";
   attribute SOFT_HLUTNM of \r_mult[1][10]_i_35\ : label is "soft_lutpair13";
   attribute SOFT_HLUTNM of \r_mult[1][10]_i_36\ : label is "soft_lutpair12";
   attribute SOFT_HLUTNM of \r_mult[1][10]_i_37\ : label is "soft_lutpair10";
   attribute SOFT_HLUTNM of \r_mult[1][10]_i_38\ : label is "soft_lutpair11";
   attribute SOFT_HLUTNM of \r_mult[1][10]_i_39\ : label is "soft_lutpair14";
-  attribute HLUTNM of \r_mult[1][10]_i_4\ : label is "lutpair9";
-  attribute HLUTNM of \r_mult[1][10]_i_5\ : label is "lutpair8";
-  attribute HLUTNM of \r_mult[1][10]_i_7\ : label is "lutpair11";
-  attribute HLUTNM of \r_mult[1][10]_i_8\ : label is "lutpair10";
-  attribute HLUTNM of \r_mult[1][10]_i_9\ : label is "lutpair9";
+  attribute HLUTNM of \r_mult[1][10]_i_4\ : label is "lutpair7";
+  attribute HLUTNM of \r_mult[1][10]_i_5\ : label is "lutpair6";
+  attribute HLUTNM of \r_mult[1][10]_i_8\ : label is "lutpair8";
+  attribute HLUTNM of \r_mult[1][10]_i_9\ : label is "lutpair7";
   attribute SOFT_HLUTNM of \r_mult[1][14]_i_28\ : label is "soft_lutpair13";
   attribute SOFT_HLUTNM of \r_mult[1][14]_i_29\ : label is "soft_lutpair12";
   attribute SOFT_HLUTNM of \r_mult[1][14]_i_30\ : label is "soft_lutpair14";
   attribute SOFT_HLUTNM of \r_mult[1][14]_i_31\ : label is "soft_lutpair11";
   attribute SOFT_HLUTNM of \r_mult[1][2]_i_9\ : label is "soft_lutpair10";
-  attribute HLUTNM of \r_mult[1][6]_i_2\ : label is "lutpair18";
-  attribute HLUTNM of \r_mult[1][6]_i_5\ : label is "lutpair8";
-  attribute HLUTNM of \r_mult[1][6]_i_6\ : label is "lutpair18";
-  attribute HLUTNM of \r_mult[2][10]_i_2\ : label is "lutpair7";
-  attribute HLUTNM of \r_mult[2][10]_i_3\ : label is "lutpair6";
+  attribute HLUTNM of \r_mult[1][6]_i_2\ : label is "lutpair14";
+  attribute HLUTNM of \r_mult[1][6]_i_5\ : label is "lutpair6";
+  attribute HLUTNM of \r_mult[1][6]_i_6\ : label is "lutpair14";
+  attribute HLUTNM of \r_mult[2][10]_i_3\ : label is "lutpair5";
   attribute SOFT_HLUTNM of \r_mult[2][10]_i_35\ : label is "soft_lutpair8";
   attribute SOFT_HLUTNM of \r_mult[2][10]_i_36\ : label is "soft_lutpair7";
   attribute SOFT_HLUTNM of \r_mult[2][10]_i_37\ : label is "soft_lutpair5";
   attribute SOFT_HLUTNM of \r_mult[2][10]_i_38\ : label is "soft_lutpair6";
   attribute SOFT_HLUTNM of \r_mult[2][10]_i_39\ : label is "soft_lutpair9";
-  attribute HLUTNM of \r_mult[2][10]_i_4\ : label is "lutpair5";
-  attribute HLUTNM of \r_mult[2][10]_i_5\ : label is "lutpair4";
-  attribute HLUTNM of \r_mult[2][10]_i_7\ : label is "lutpair7";
-  attribute HLUTNM of \r_mult[2][10]_i_8\ : label is "lutpair6";
-  attribute HLUTNM of \r_mult[2][10]_i_9\ : label is "lutpair5";
+  attribute HLUTNM of \r_mult[2][10]_i_4\ : label is "lutpair4";
+  attribute HLUTNM of \r_mult[2][10]_i_5\ : label is "lutpair3";
+  attribute HLUTNM of \r_mult[2][10]_i_8\ : label is "lutpair5";
+  attribute HLUTNM of \r_mult[2][10]_i_9\ : label is "lutpair4";
   attribute SOFT_HLUTNM of \r_mult[2][14]_i_28\ : label is "soft_lutpair8";
   attribute SOFT_HLUTNM of \r_mult[2][14]_i_29\ : label is "soft_lutpair7";
   attribute SOFT_HLUTNM of \r_mult[2][14]_i_30\ : label is "soft_lutpair9";
   attribute SOFT_HLUTNM of \r_mult[2][14]_i_31\ : label is "soft_lutpair6";
   attribute SOFT_HLUTNM of \r_mult[2][2]_i_9\ : label is "soft_lutpair5";
-  attribute HLUTNM of \r_mult[2][6]_i_2\ : label is "lutpair17";
-  attribute HLUTNM of \r_mult[2][6]_i_5\ : label is "lutpair4";
-  attribute HLUTNM of \r_mult[2][6]_i_6\ : label is "lutpair17";
-  attribute HLUTNM of \r_mult[3][10]_i_2\ : label is "lutpair3";
+  attribute HLUTNM of \r_mult[2][6]_i_2\ : label is "lutpair13";
+  attribute HLUTNM of \r_mult[2][6]_i_5\ : label is "lutpair3";
+  attribute HLUTNM of \r_mult[2][6]_i_6\ : label is "lutpair13";
   attribute HLUTNM of \r_mult[3][10]_i_3\ : label is "lutpair2";
   attribute SOFT_HLUTNM of \r_mult[3][10]_i_35\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \r_mult[3][10]_i_36\ : label is "soft_lutpair2";
@@ -945,7 +950,6 @@ architecture STRUCTURE of design_1_FirAxi_0_0_Filtro_FIR_4in is
   attribute SOFT_HLUTNM of \r_mult[3][10]_i_39\ : label is "soft_lutpair4";
   attribute HLUTNM of \r_mult[3][10]_i_4\ : label is "lutpair1";
   attribute HLUTNM of \r_mult[3][10]_i_5\ : label is "lutpair0";
-  attribute HLUTNM of \r_mult[3][10]_i_7\ : label is "lutpair3";
   attribute HLUTNM of \r_mult[3][10]_i_8\ : label is "lutpair2";
   attribute HLUTNM of \r_mult[3][10]_i_9\ : label is "lutpair1";
   attribute SOFT_HLUTNM of \r_mult[3][14]_i_28\ : label is "soft_lutpair3";
@@ -953,9 +957,9 @@ architecture STRUCTURE of design_1_FirAxi_0_0_Filtro_FIR_4in is
   attribute SOFT_HLUTNM of \r_mult[3][14]_i_30\ : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \r_mult[3][14]_i_31\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \r_mult[3][2]_i_9\ : label is "soft_lutpair0";
-  attribute HLUTNM of \r_mult[3][6]_i_2\ : label is "lutpair16";
+  attribute HLUTNM of \r_mult[3][6]_i_2\ : label is "lutpair12";
   attribute HLUTNM of \r_mult[3][6]_i_5\ : label is "lutpair0";
-  attribute HLUTNM of \r_mult[3][6]_i_6\ : label is "lutpair16";
+  attribute HLUTNM of \r_mult[3][6]_i_6\ : label is "lutpair12";
   attribute METHODOLOGY_DRC_VIOS : string;
   attribute METHODOLOGY_DRC_VIOS of \r_mult_reg[0][10]_i_1\ : label is "{SYNTH-9 {cell *THIS*} {string 8x8}}";
   attribute METHODOLOGY_DRC_VIOS of \r_mult_reg[0][10]_i_10\ : label is "{SYNTH-9 {cell *THIS*} {string 8x8}}";
@@ -1019,13 +1023,111 @@ axi_awready_i_1: unisim.vcomponents.LUT1
       I0 => s00_axi_aresetn,
       O => \^sr\(0)
     );
+\axi_rdata[0]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => fir_valid,
+      I1 => o_data(0),
+      O => D(0)
+    );
+\axi_rdata[1]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => fir_valid,
+      I1 => o_data(1),
+      O => D(1)
+    );
+\axi_rdata[2]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => fir_valid,
+      I1 => o_data(2),
+      O => D(2)
+    );
+\axi_rdata[3]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => fir_valid,
+      I1 => o_data(3),
+      O => D(3)
+    );
+\axi_rdata[4]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => fir_valid,
+      I1 => o_data(4),
+      O => D(4)
+    );
+\axi_rdata[5]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => fir_valid,
+      I1 => o_data(5),
+      O => D(5)
+    );
+\axi_rdata[6]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => fir_valid,
+      I1 => o_data(6),
+      O => D(6)
+    );
+\axi_rdata[7]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => fir_valid,
+      I1 => o_data(7),
+      O => D(7)
+    );
+\axi_rdata[8]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => fir_valid,
+      I1 => o_data(8),
+      O => D(8)
+    );
+\axi_rdata[9]_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => fir_valid,
+      I1 => o_data(9),
+      O => D(9)
+    );
+fir_valid_reg: unisim.vcomponents.FDCE
+     port map (
+      C => s00_axi_aclk,
+      CE => '1',
+      CLR => \^sr\(0),
+      D => '1',
+      Q => fir_valid
+    );
 \o_data_reg[0]\: unisim.vcomponents.FDCE
      port map (
       C => s00_axi_aclk,
       CE => '1',
       CLR => \^sr\(0),
       D => p_0_in(0),
-      Q => \o_data_reg[9]_0\(0)
+      Q => o_data(0)
     );
 \o_data_reg[1]\: unisim.vcomponents.FDCE
      port map (
@@ -1033,7 +1135,7 @@ axi_awready_i_1: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \^sr\(0),
       D => p_0_in(1),
-      Q => \o_data_reg[9]_0\(1)
+      Q => o_data(1)
     );
 \o_data_reg[2]\: unisim.vcomponents.FDCE
      port map (
@@ -1041,7 +1143,7 @@ axi_awready_i_1: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \^sr\(0),
       D => p_0_in(2),
-      Q => \o_data_reg[9]_0\(2)
+      Q => o_data(2)
     );
 \o_data_reg[3]\: unisim.vcomponents.FDCE
      port map (
@@ -1049,7 +1151,7 @@ axi_awready_i_1: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \^sr\(0),
       D => p_0_in(3),
-      Q => \o_data_reg[9]_0\(3)
+      Q => o_data(3)
     );
 \o_data_reg[4]\: unisim.vcomponents.FDCE
      port map (
@@ -1057,7 +1159,7 @@ axi_awready_i_1: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \^sr\(0),
       D => p_0_in(4),
-      Q => \o_data_reg[9]_0\(4)
+      Q => o_data(4)
     );
 \o_data_reg[5]\: unisim.vcomponents.FDCE
      port map (
@@ -1065,7 +1167,7 @@ axi_awready_i_1: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \^sr\(0),
       D => p_0_in(5),
-      Q => \o_data_reg[9]_0\(5)
+      Q => o_data(5)
     );
 \o_data_reg[6]\: unisim.vcomponents.FDCE
      port map (
@@ -1073,7 +1175,7 @@ axi_awready_i_1: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \^sr\(0),
       D => p_0_in(6),
-      Q => \o_data_reg[9]_0\(6)
+      Q => o_data(6)
     );
 \o_data_reg[7]\: unisim.vcomponents.FDCE
      port map (
@@ -1081,7 +1183,7 @@ axi_awready_i_1: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \^sr\(0),
       D => p_0_in(7),
-      Q => \o_data_reg[9]_0\(7)
+      Q => o_data(7)
     );
 \o_data_reg[8]\: unisim.vcomponents.FDCE
      port map (
@@ -1089,7 +1191,7 @@ axi_awready_i_1: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \^sr\(0),
       D => p_0_in(8),
-      Q => \o_data_reg[9]_0\(8)
+      Q => o_data(8)
     );
 \o_data_reg[9]\: unisim.vcomponents.FDCE
      port map (
@@ -1097,7 +1199,7 @@ axi_awready_i_1: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \^sr\(0),
       D => p_0_in(9),
-      Q => \o_data_reg[9]_0\(9)
+      Q => o_data(9)
     );
 \p_data_reg[0][0]\: unisim.vcomponents.FDCE
      port map (
@@ -8032,8 +8134,8 @@ architecture STRUCTURE of design_1_FirAxi_0_0_FirAxi_v5_0_S00_AXI is
   signal i_coeff_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal i_coeff_2 : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal i_coeff_3 : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal o_data : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal p_1_in : STD_LOGIC_VECTOR ( 31 downto 7 );
+  signal reg_data_out : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal \^s00_axi_bvalid\ : STD_LOGIC;
   signal \^s00_axi_rvalid\ : STD_LOGIC;
   signal \slv_reg0_reg_n_0_[0]\ : STD_LOGIC;
@@ -8049,10 +8151,10 @@ architecture STRUCTURE of design_1_FirAxi_0_0_FirAxi_v5_0_S00_AXI is
   signal slv_reg_rden : STD_LOGIC;
   signal \slv_reg_wren__2\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of axi_arready_i_1 : label is "soft_lutpair21";
-  attribute SOFT_HLUTNM of axi_awready_i_2 : label is "soft_lutpair20";
-  attribute SOFT_HLUTNM of axi_rvalid_i_1 : label is "soft_lutpair21";
-  attribute SOFT_HLUTNM of axi_wready_i_1 : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of axi_arready_i_1 : label is "soft_lutpair26";
+  attribute SOFT_HLUTNM of axi_awready_i_2 : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of axi_rvalid_i_1 : label is "soft_lutpair26";
+  attribute SOFT_HLUTNM of axi_wready_i_1 : label is "soft_lutpair25";
 begin
   S_AXI_ARREADY <= \^s_axi_arready\;
   S_AXI_AWREADY <= \^s_axi_awready\;
@@ -8061,6 +8163,7 @@ begin
   s00_axi_rvalid <= \^s00_axi_rvalid\;
 FiltroFirAxi_inst: entity work.design_1_FirAxi_0_0_Filtro_FIR_4in
      port map (
+      D(9 downto 0) => reg_data_out(9 downto 0),
       Q(31 downto 24) => i_coeff_3(7 downto 0),
       Q(23 downto 16) => i_coeff_2(7 downto 0),
       Q(15 downto 8) => i_coeff_1(7 downto 0),
@@ -8073,7 +8176,6 @@ FiltroFirAxi_inst: entity work.design_1_FirAxi_0_0_Filtro_FIR_4in
       Q(1) => \slv_reg0_reg_n_0_[1]\,
       Q(0) => \slv_reg0_reg_n_0_[0]\,
       SR(0) => FiltroFirAxi_inst_n_0,
-      \o_data_reg[9]_0\(9 downto 0) => o_data(9 downto 0),
       \p_data_reg[0][7]_0\(7 downto 0) => slv_reg1(7 downto 0),
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_aresetn => s00_axi_aresetn
@@ -8212,7 +8314,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
       CE => slv_reg_rden,
-      D => o_data(0),
+      D => reg_data_out(0),
       Q => s00_axi_rdata(0),
       R => FiltroFirAxi_inst_n_0
     );
@@ -8220,7 +8322,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
       CE => slv_reg_rden,
-      D => o_data(1),
+      D => reg_data_out(1),
       Q => s00_axi_rdata(1),
       R => FiltroFirAxi_inst_n_0
     );
@@ -8228,7 +8330,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
       CE => slv_reg_rden,
-      D => o_data(2),
+      D => reg_data_out(2),
       Q => s00_axi_rdata(2),
       R => FiltroFirAxi_inst_n_0
     );
@@ -8236,7 +8338,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
       CE => slv_reg_rden,
-      D => o_data(3),
+      D => reg_data_out(3),
       Q => s00_axi_rdata(3),
       R => FiltroFirAxi_inst_n_0
     );
@@ -8244,7 +8346,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
       CE => slv_reg_rden,
-      D => o_data(4),
+      D => reg_data_out(4),
       Q => s00_axi_rdata(4),
       R => FiltroFirAxi_inst_n_0
     );
@@ -8252,7 +8354,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
       CE => slv_reg_rden,
-      D => o_data(5),
+      D => reg_data_out(5),
       Q => s00_axi_rdata(5),
       R => FiltroFirAxi_inst_n_0
     );
@@ -8260,7 +8362,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
       CE => slv_reg_rden,
-      D => o_data(6),
+      D => reg_data_out(6),
       Q => s00_axi_rdata(6),
       R => FiltroFirAxi_inst_n_0
     );
@@ -8268,7 +8370,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
       CE => slv_reg_rden,
-      D => o_data(7),
+      D => reg_data_out(7),
       Q => s00_axi_rdata(7),
       R => FiltroFirAxi_inst_n_0
     );
@@ -8276,7 +8378,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
       CE => slv_reg_rden,
-      D => o_data(8),
+      D => reg_data_out(8),
       Q => s00_axi_rdata(8),
       R => FiltroFirAxi_inst_n_0
     );
@@ -8284,7 +8386,7 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
       CE => slv_reg_rden,
-      D => o_data(9),
+      D => reg_data_out(9),
       Q => s00_axi_rdata(9),
       R => FiltroFirAxi_inst_n_0
     );

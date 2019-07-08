@@ -6,7 +6,7 @@
 <Project Version="7" Minor="39" Path="h:/jorge/upm/master/1ercuatri/des/trabajo_filtrofir/filtro-fir---des/fir/fir.tmp/firaxi_v5_0_project/FirAxi_v5_0_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="9477fd8d3df142a5a7954a60103e7fdb"/>
+    <Option Name="Id" Val="a2eedc3b2c48455096c755df4561ce28"/>
     <Option Name="Part" Val="xc7z020clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -62,34 +62,34 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../../../../../../../../../Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/edit_FirAxi_v5_0.srcs/sources_1/imports/FirAxi_5.0/hdl/Fir.vhd">
+      <File Path="$PPRDIR/../../../../../../../../../../Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FirAxi_5.0/src/Fir.vhd">
         <FileInfo>
           <Attr Name="Library" Val=""/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../../../../../../../../Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/edit_FirAxi_v5_0.srcs/sources_1/imports/FirAxi_5.0/hdl/FirAxi_v5_0_S00_AXI.vhd">
+      <File Path="$PPRDIR/../../../../../../../../../../Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FirAxi_5.0/src/FirAxi_v5_0_S00_AXI.vhd">
         <FileInfo>
           <Attr Name="Library" Val=""/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../../../../../../../../Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/edit_FirAxi_v5_0.srcs/sources_1/imports/FirAxi_5.0/hdl/FirAxi_v5_0.vhd">
+      <File Path="$PPRDIR/../../../../../../../../../../Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FirAxi_5.0/src/FirAxi_v5_0.vhd">
         <FileInfo>
           <Attr Name="Library" Val=""/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../../../../../../../../Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/edit_FirAxi_v5_0.srcs/sources_1/imports/FirAxi_5.0/component.xml">
+      <File Path="$PPRDIR/../../../../../../../../../../Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FirAxi_5.0/component.xml">
         <FileInfo SFType="IPXACT"/>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="FirAxi_v5_0"/>
-        <Option Name="TopRTLFile" Val="$PPRDIR/../../../../../../../../../../Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/edit_FirAxi_v5_0.srcs/sources_1/imports/FirAxi_5.0/hdl/FirAxi_v5_0.vhd"/>
+        <Option Name="TopRTLFile" Val="$PPRDIR/../../../../../../../../../../Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/FirAxi_5.0/src/FirAxi_v5_0.vhd"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

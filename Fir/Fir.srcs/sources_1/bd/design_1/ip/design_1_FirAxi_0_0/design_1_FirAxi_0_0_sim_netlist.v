@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Mon Jul  8 10:51:10 2019
+// Date        : Mon Jul  8 11:29:17 2019
 // Host        : DESKTOP-3OCE3Q5 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               h:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/Fir/Fir.srcs/sources_1/bd/design_1/ip/design_1_FirAxi_0_0/design_1_FirAxi_0_0_sim_netlist.v
@@ -127,22 +127,24 @@ endmodule
 (* ORIG_REF_NAME = "Filtro_FIR_4in" *) 
 module design_1_FirAxi_0_0_Filtro_FIR_4in
    (SR,
-    \o_data_reg[9]_0 ,
+    D,
+    s00_axi_aclk,
     s00_axi_aresetn,
     Q,
-    s00_axi_aclk,
     \p_data_reg[0][7]_0 );
   output [0:0]SR;
-  output [9:0]\o_data_reg[9]_0 ;
+  output [9:0]D;
+  input s00_axi_aclk;
   input s00_axi_aresetn;
   input [31:0]Q;
-  input s00_axi_aclk;
   input [7:0]\p_data_reg[0][7]_0 ;
 
   wire [7:0]A;
+  wire [9:0]D;
   wire [31:0]Q;
   wire [0:0]SR;
-  wire [9:0]\o_data_reg[9]_0 ;
+  wire fir_valid;
+  wire [9:0]o_data;
   wire [9:0]p_0_in;
   wire [7:0]\p_data_reg[0][7]_0 ;
   wire \p_data_reg_n_0_[1][0] ;
@@ -996,66 +998,142 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
     axi_awready_i_1
        (.I0(s00_axi_aresetn),
         .O(SR));
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \axi_rdata[0]_i_1 
+       (.I0(fir_valid),
+        .I1(o_data[0]),
+        .O(D[0]));
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \axi_rdata[1]_i_1 
+       (.I0(fir_valid),
+        .I1(o_data[1]),
+        .O(D[1]));
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \axi_rdata[2]_i_1 
+       (.I0(fir_valid),
+        .I1(o_data[2]),
+        .O(D[2]));
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \axi_rdata[3]_i_1 
+       (.I0(fir_valid),
+        .I1(o_data[3]),
+        .O(D[3]));
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \axi_rdata[4]_i_1 
+       (.I0(fir_valid),
+        .I1(o_data[4]),
+        .O(D[4]));
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \axi_rdata[5]_i_1 
+       (.I0(fir_valid),
+        .I1(o_data[5]),
+        .O(D[5]));
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \axi_rdata[6]_i_1 
+       (.I0(fir_valid),
+        .I1(o_data[6]),
+        .O(D[6]));
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \axi_rdata[7]_i_1 
+       (.I0(fir_valid),
+        .I1(o_data[7]),
+        .O(D[7]));
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \axi_rdata[8]_i_1 
+       (.I0(fir_valid),
+        .I1(o_data[8]),
+        .O(D[8]));
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \axi_rdata[9]_i_2 
+       (.I0(fir_valid),
+        .I1(o_data[9]),
+        .O(D[9]));
+  FDCE fir_valid_reg
+       (.C(s00_axi_aclk),
+        .CE(1'b1),
+        .CLR(SR),
+        .D(1'b1),
+        .Q(fir_valid));
   FDCE \o_data_reg[0] 
        (.C(s00_axi_aclk),
         .CE(1'b1),
         .CLR(SR),
         .D(p_0_in[0]),
-        .Q(\o_data_reg[9]_0 [0]));
+        .Q(o_data[0]));
   FDCE \o_data_reg[1] 
        (.C(s00_axi_aclk),
         .CE(1'b1),
         .CLR(SR),
         .D(p_0_in[1]),
-        .Q(\o_data_reg[9]_0 [1]));
+        .Q(o_data[1]));
   FDCE \o_data_reg[2] 
        (.C(s00_axi_aclk),
         .CE(1'b1),
         .CLR(SR),
         .D(p_0_in[2]),
-        .Q(\o_data_reg[9]_0 [2]));
+        .Q(o_data[2]));
   FDCE \o_data_reg[3] 
        (.C(s00_axi_aclk),
         .CE(1'b1),
         .CLR(SR),
         .D(p_0_in[3]),
-        .Q(\o_data_reg[9]_0 [3]));
+        .Q(o_data[3]));
   FDCE \o_data_reg[4] 
        (.C(s00_axi_aclk),
         .CE(1'b1),
         .CLR(SR),
         .D(p_0_in[4]),
-        .Q(\o_data_reg[9]_0 [4]));
+        .Q(o_data[4]));
   FDCE \o_data_reg[5] 
        (.C(s00_axi_aclk),
         .CE(1'b1),
         .CLR(SR),
         .D(p_0_in[5]),
-        .Q(\o_data_reg[9]_0 [5]));
+        .Q(o_data[5]));
   FDCE \o_data_reg[6] 
        (.C(s00_axi_aclk),
         .CE(1'b1),
         .CLR(SR),
         .D(p_0_in[6]),
-        .Q(\o_data_reg[9]_0 [6]));
+        .Q(o_data[6]));
   FDCE \o_data_reg[7] 
        (.C(s00_axi_aclk),
         .CE(1'b1),
         .CLR(SR),
         .D(p_0_in[7]),
-        .Q(\o_data_reg[9]_0 [7]));
+        .Q(o_data[7]));
   FDCE \o_data_reg[8] 
        (.C(s00_axi_aclk),
         .CE(1'b1),
         .CLR(SR),
         .D(p_0_in[8]),
-        .Q(\o_data_reg[9]_0 [8]));
+        .Q(o_data[8]));
   FDCE \o_data_reg[9] 
        (.C(s00_axi_aclk),
         .CE(1'b1),
         .CLR(SR),
         .D(p_0_in[9]),
-        .Q(\o_data_reg[9]_0 [9]));
+        .Q(o_data[9]));
   FDCE \p_data_reg[0][0] 
        (.C(s00_axi_aclk),
         .CE(1'b1),
@@ -2167,7 +2245,6 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
        (.I0(A[0]),
         .I1(\r_coeff_reg[0] [6]),
         .O(\r_mult[0][10]_i_19_n_0 ));
-  (* HLUTNM = "lutpair15" *) 
   LUT3 #(
     .INIT(8'hE8)) 
     \r_mult[0][10]_i_2 
@@ -2273,7 +2350,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I2(\r_coeff_reg[0] [5]),
         .I3(A[0]),
         .O(\r_mult[0][10]_i_29_n_0 ));
-  (* HLUTNM = "lutpair14" *) 
+  (* HLUTNM = "lutpair11" *) 
   LUT3 #(
     .INIT(8'hE8)) 
     \r_mult[0][10]_i_3 
@@ -2356,7 +2433,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
        (.I0(A[3]),
         .I1(\r_coeff_reg[0] [3]),
         .O(\r_mult[0][10]_i_39_n_0 ));
-  (* HLUTNM = "lutpair13" *) 
+  (* HLUTNM = "lutpair10" *) 
   LUT3 #(
     .INIT(8'hE8)) 
     \r_mult[0][10]_i_4 
@@ -2364,7 +2441,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I1(\r_mult_reg[0][14]_i_10_n_7 ),
         .I2(\r_mult_reg[0][10]_i_11_n_4 ),
         .O(\r_mult[0][10]_i_4_n_0 ));
-  (* HLUTNM = "lutpair12" *) 
+  (* HLUTNM = "lutpair9" *) 
   LUT3 #(
     .INIT(8'hE8)) 
     \r_mult[0][10]_i_5 
@@ -2380,7 +2457,6 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I2(\r_mult_reg[0][15]_i_3_n_7 ),
         .I3(\r_mult_reg[0][14]_i_11_n_1 ),
         .O(\r_mult[0][10]_i_6_n_0 ));
-  (* HLUTNM = "lutpair15" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     \r_mult[0][10]_i_7 
@@ -2389,7 +2465,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I2(\r_mult_reg[0][14]_i_11_n_6 ),
         .I3(\r_mult[0][10]_i_3_n_0 ),
         .O(\r_mult[0][10]_i_7_n_0 ));
-  (* HLUTNM = "lutpair14" *) 
+  (* HLUTNM = "lutpair11" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     \r_mult[0][10]_i_8 
@@ -2398,7 +2474,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I2(\r_mult_reg[0][14]_i_11_n_7 ),
         .I3(\r_mult[0][10]_i_4_n_0 ),
         .O(\r_mult[0][10]_i_8_n_0 ));
-  (* HLUTNM = "lutpair13" *) 
+  (* HLUTNM = "lutpair10" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     \r_mult[0][10]_i_9 
@@ -2787,7 +2863,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
        (.I0(A[3]),
         .I1(\r_coeff_reg[0] [0]),
         .O(\r_mult[0][2]_i_9_n_0 ));
-  (* HLUTNM = "lutpair19" *) 
+  (* HLUTNM = "lutpair15" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \r_mult[0][6]_i_2 
@@ -2806,7 +2882,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
        (.I0(\r_mult_reg[0][2]_i_1_n_4 ),
         .I1(\r_mult_reg[0][10]_i_12_n_7 ),
         .O(\r_mult[0][6]_i_4_n_0 ));
-  (* HLUTNM = "lutpair12" *) 
+  (* HLUTNM = "lutpair9" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     \r_mult[0][6]_i_5 
@@ -2815,7 +2891,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I2(\r_mult_reg[0][10]_i_11_n_5 ),
         .I3(\r_mult[0][6]_i_2_n_0 ),
         .O(\r_mult[0][6]_i_5_n_0 ));
-  (* HLUTNM = "lutpair19" *) 
+  (* HLUTNM = "lutpair15" *) 
   LUT4 #(
     .INIT(16'h9666)) 
     \r_mult[0][6]_i_6 
@@ -2887,7 +2963,6 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
        (.I0(\p_data_reg_n_0_[1][0] ),
         .I1(\r_coeff_reg[1] [6]),
         .O(\r_mult[1][10]_i_19_n_0 ));
-  (* HLUTNM = "lutpair11" *) 
   LUT3 #(
     .INIT(8'hE8)) 
     \r_mult[1][10]_i_2 
@@ -2993,7 +3068,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I2(\r_coeff_reg[1] [5]),
         .I3(\p_data_reg_n_0_[1][0] ),
         .O(\r_mult[1][10]_i_29_n_0 ));
-  (* HLUTNM = "lutpair10" *) 
+  (* HLUTNM = "lutpair8" *) 
   LUT3 #(
     .INIT(8'hE8)) 
     \r_mult[1][10]_i_3 
@@ -3076,7 +3151,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
        (.I0(\p_data_reg_n_0_[1][3] ),
         .I1(\r_coeff_reg[1] [3]),
         .O(\r_mult[1][10]_i_39_n_0 ));
-  (* HLUTNM = "lutpair9" *) 
+  (* HLUTNM = "lutpair7" *) 
   LUT3 #(
     .INIT(8'hE8)) 
     \r_mult[1][10]_i_4 
@@ -3084,7 +3159,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I1(\r_mult_reg[1][14]_i_10_n_7 ),
         .I2(\r_mult_reg[1][10]_i_11_n_4 ),
         .O(\r_mult[1][10]_i_4_n_0 ));
-  (* HLUTNM = "lutpair8" *) 
+  (* HLUTNM = "lutpair6" *) 
   LUT3 #(
     .INIT(8'hE8)) 
     \r_mult[1][10]_i_5 
@@ -3100,7 +3175,6 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I2(\r_mult_reg[1][15]_i_3_n_7 ),
         .I3(\r_mult_reg[1][14]_i_11_n_1 ),
         .O(\r_mult[1][10]_i_6_n_0 ));
-  (* HLUTNM = "lutpair11" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     \r_mult[1][10]_i_7 
@@ -3109,7 +3183,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I2(\r_mult_reg[1][14]_i_11_n_6 ),
         .I3(\r_mult[1][10]_i_3_n_0 ),
         .O(\r_mult[1][10]_i_7_n_0 ));
-  (* HLUTNM = "lutpair10" *) 
+  (* HLUTNM = "lutpair8" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     \r_mult[1][10]_i_8 
@@ -3118,7 +3192,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I2(\r_mult_reg[1][14]_i_11_n_7 ),
         .I3(\r_mult[1][10]_i_4_n_0 ),
         .O(\r_mult[1][10]_i_8_n_0 ));
-  (* HLUTNM = "lutpair9" *) 
+  (* HLUTNM = "lutpair7" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     \r_mult[1][10]_i_9 
@@ -3507,7 +3581,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
        (.I0(\p_data_reg_n_0_[1][3] ),
         .I1(\r_coeff_reg[1] [0]),
         .O(\r_mult[1][2]_i_9_n_0 ));
-  (* HLUTNM = "lutpair18" *) 
+  (* HLUTNM = "lutpair14" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \r_mult[1][6]_i_2 
@@ -3526,7 +3600,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
        (.I0(\r_mult_reg[1][2]_i_1_n_4 ),
         .I1(\r_mult_reg[1][10]_i_12_n_7 ),
         .O(\r_mult[1][6]_i_4_n_0 ));
-  (* HLUTNM = "lutpair8" *) 
+  (* HLUTNM = "lutpair6" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     \r_mult[1][6]_i_5 
@@ -3535,7 +3609,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I2(\r_mult_reg[1][10]_i_11_n_5 ),
         .I3(\r_mult[1][6]_i_2_n_0 ),
         .O(\r_mult[1][6]_i_5_n_0 ));
-  (* HLUTNM = "lutpair18" *) 
+  (* HLUTNM = "lutpair14" *) 
   LUT4 #(
     .INIT(16'h9666)) 
     \r_mult[1][6]_i_6 
@@ -3607,7 +3681,6 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
        (.I0(\p_data_reg_n_0_[2][0] ),
         .I1(\r_coeff_reg[2] [6]),
         .O(\r_mult[2][10]_i_19_n_0 ));
-  (* HLUTNM = "lutpair7" *) 
   LUT3 #(
     .INIT(8'hE8)) 
     \r_mult[2][10]_i_2 
@@ -3713,7 +3786,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I2(\r_coeff_reg[2] [5]),
         .I3(\p_data_reg_n_0_[2][0] ),
         .O(\r_mult[2][10]_i_29_n_0 ));
-  (* HLUTNM = "lutpair6" *) 
+  (* HLUTNM = "lutpair5" *) 
   LUT3 #(
     .INIT(8'hE8)) 
     \r_mult[2][10]_i_3 
@@ -3796,7 +3869,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
        (.I0(\p_data_reg_n_0_[2][3] ),
         .I1(\r_coeff_reg[2] [3]),
         .O(\r_mult[2][10]_i_39_n_0 ));
-  (* HLUTNM = "lutpair5" *) 
+  (* HLUTNM = "lutpair4" *) 
   LUT3 #(
     .INIT(8'hE8)) 
     \r_mult[2][10]_i_4 
@@ -3804,7 +3877,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I1(\r_mult_reg[2][14]_i_10_n_7 ),
         .I2(\r_mult_reg[2][10]_i_11_n_4 ),
         .O(\r_mult[2][10]_i_4_n_0 ));
-  (* HLUTNM = "lutpair4" *) 
+  (* HLUTNM = "lutpair3" *) 
   LUT3 #(
     .INIT(8'hE8)) 
     \r_mult[2][10]_i_5 
@@ -3820,7 +3893,6 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I2(\r_mult_reg[2][15]_i_3_n_7 ),
         .I3(\r_mult_reg[2][14]_i_11_n_1 ),
         .O(\r_mult[2][10]_i_6_n_0 ));
-  (* HLUTNM = "lutpair7" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     \r_mult[2][10]_i_7 
@@ -3829,7 +3901,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I2(\r_mult_reg[2][14]_i_11_n_6 ),
         .I3(\r_mult[2][10]_i_3_n_0 ),
         .O(\r_mult[2][10]_i_7_n_0 ));
-  (* HLUTNM = "lutpair6" *) 
+  (* HLUTNM = "lutpair5" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     \r_mult[2][10]_i_8 
@@ -3838,7 +3910,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I2(\r_mult_reg[2][14]_i_11_n_7 ),
         .I3(\r_mult[2][10]_i_4_n_0 ),
         .O(\r_mult[2][10]_i_8_n_0 ));
-  (* HLUTNM = "lutpair5" *) 
+  (* HLUTNM = "lutpair4" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     \r_mult[2][10]_i_9 
@@ -4227,7 +4299,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
        (.I0(\p_data_reg_n_0_[2][3] ),
         .I1(\r_coeff_reg[2] [0]),
         .O(\r_mult[2][2]_i_9_n_0 ));
-  (* HLUTNM = "lutpair17" *) 
+  (* HLUTNM = "lutpair13" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \r_mult[2][6]_i_2 
@@ -4246,7 +4318,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
        (.I0(\r_mult_reg[2][2]_i_1_n_4 ),
         .I1(\r_mult_reg[2][10]_i_12_n_7 ),
         .O(\r_mult[2][6]_i_4_n_0 ));
-  (* HLUTNM = "lutpair4" *) 
+  (* HLUTNM = "lutpair3" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     \r_mult[2][6]_i_5 
@@ -4255,7 +4327,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I2(\r_mult_reg[2][10]_i_11_n_5 ),
         .I3(\r_mult[2][6]_i_2_n_0 ),
         .O(\r_mult[2][6]_i_5_n_0 ));
-  (* HLUTNM = "lutpair17" *) 
+  (* HLUTNM = "lutpair13" *) 
   LUT4 #(
     .INIT(16'h9666)) 
     \r_mult[2][6]_i_6 
@@ -4327,7 +4399,6 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
        (.I0(\p_data_reg_n_0_[3][0] ),
         .I1(\r_coeff_reg[3] [6]),
         .O(\r_mult[3][10]_i_19_n_0 ));
-  (* HLUTNM = "lutpair3" *) 
   LUT3 #(
     .INIT(8'hE8)) 
     \r_mult[3][10]_i_2 
@@ -4540,7 +4611,6 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I2(\r_mult_reg[3][15]_i_3_n_7 ),
         .I3(\r_mult_reg[3][14]_i_11_n_1 ),
         .O(\r_mult[3][10]_i_6_n_0 ));
-  (* HLUTNM = "lutpair3" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     \r_mult[3][10]_i_7 
@@ -4947,7 +5017,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
        (.I0(\p_data_reg_n_0_[3][3] ),
         .I1(\r_coeff_reg[3] [0]),
         .O(\r_mult[3][2]_i_9_n_0 ));
-  (* HLUTNM = "lutpair16" *) 
+  (* HLUTNM = "lutpair12" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \r_mult[3][6]_i_2 
@@ -4975,7 +5045,7 @@ module design_1_FirAxi_0_0_Filtro_FIR_4in
         .I2(\r_mult_reg[3][10]_i_11_n_5 ),
         .I3(\r_mult[3][6]_i_2_n_0 ),
         .O(\r_mult[3][6]_i_5_n_0 ));
-  (* HLUTNM = "lutpair16" *) 
+  (* HLUTNM = "lutpair12" *) 
   LUT4 #(
     .INIT(16'h9666)) 
     \r_mult[3][6]_i_6 
@@ -5923,8 +5993,8 @@ module design_1_FirAxi_0_0_FirAxi_v5_0_S00_AXI
   wire [7:0]i_coeff_1;
   wire [7:0]i_coeff_2;
   wire [7:0]i_coeff_3;
-  wire [9:0]o_data;
   wire [31:7]p_1_in;
+  wire [9:0]reg_data_out;
   wire s00_axi_aclk;
   wire s00_axi_aresetn;
   wire s00_axi_arvalid;
@@ -5952,9 +6022,9 @@ module design_1_FirAxi_0_0_FirAxi_v5_0_S00_AXI
   wire slv_reg_wren__2;
 
   design_1_FirAxi_0_0_Filtro_FIR_4in FiltroFirAxi_inst
-       (.Q({i_coeff_3,i_coeff_2,i_coeff_1,\slv_reg0_reg_n_0_[7] ,\slv_reg0_reg_n_0_[6] ,\slv_reg0_reg_n_0_[5] ,\slv_reg0_reg_n_0_[4] ,\slv_reg0_reg_n_0_[3] ,\slv_reg0_reg_n_0_[2] ,\slv_reg0_reg_n_0_[1] ,\slv_reg0_reg_n_0_[0] }),
+       (.D(reg_data_out),
+        .Q({i_coeff_3,i_coeff_2,i_coeff_1,\slv_reg0_reg_n_0_[7] ,\slv_reg0_reg_n_0_[6] ,\slv_reg0_reg_n_0_[5] ,\slv_reg0_reg_n_0_[4] ,\slv_reg0_reg_n_0_[3] ,\slv_reg0_reg_n_0_[2] ,\slv_reg0_reg_n_0_[1] ,\slv_reg0_reg_n_0_[0] }),
         .SR(FiltroFirAxi_inst_n_0),
-        .\o_data_reg[9]_0 (o_data),
         .\p_data_reg[0][7]_0 (slv_reg1),
         .s00_axi_aclk(s00_axi_aclk),
         .s00_axi_aresetn(s00_axi_aresetn));
@@ -5974,7 +6044,7 @@ module design_1_FirAxi_0_0_FirAxi_v5_0_S00_AXI
         .D(aw_en_i_1_n_0),
         .Q(aw_en_reg_n_0),
         .S(FiltroFirAxi_inst_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT2 #(
     .INIT(4'h2)) 
     axi_arready_i_1
@@ -6019,7 +6089,7 @@ module design_1_FirAxi_0_0_FirAxi_v5_0_S00_AXI
         .D(\axi_awaddr[3]_i_1_n_0 ),
         .Q(axi_awaddr[3]),
         .R(FiltroFirAxi_inst_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT4 #(
     .INIT(16'h0080)) 
     axi_awready_i_2
@@ -6060,64 +6130,64 @@ module design_1_FirAxi_0_0_FirAxi_v5_0_S00_AXI
   FDRE \axi_rdata_reg[0] 
        (.C(s00_axi_aclk),
         .CE(slv_reg_rden),
-        .D(o_data[0]),
+        .D(reg_data_out[0]),
         .Q(s00_axi_rdata[0]),
         .R(FiltroFirAxi_inst_n_0));
   FDRE \axi_rdata_reg[1] 
        (.C(s00_axi_aclk),
         .CE(slv_reg_rden),
-        .D(o_data[1]),
+        .D(reg_data_out[1]),
         .Q(s00_axi_rdata[1]),
         .R(FiltroFirAxi_inst_n_0));
   FDRE \axi_rdata_reg[2] 
        (.C(s00_axi_aclk),
         .CE(slv_reg_rden),
-        .D(o_data[2]),
+        .D(reg_data_out[2]),
         .Q(s00_axi_rdata[2]),
         .R(FiltroFirAxi_inst_n_0));
   FDRE \axi_rdata_reg[3] 
        (.C(s00_axi_aclk),
         .CE(slv_reg_rden),
-        .D(o_data[3]),
+        .D(reg_data_out[3]),
         .Q(s00_axi_rdata[3]),
         .R(FiltroFirAxi_inst_n_0));
   FDRE \axi_rdata_reg[4] 
        (.C(s00_axi_aclk),
         .CE(slv_reg_rden),
-        .D(o_data[4]),
+        .D(reg_data_out[4]),
         .Q(s00_axi_rdata[4]),
         .R(FiltroFirAxi_inst_n_0));
   FDRE \axi_rdata_reg[5] 
        (.C(s00_axi_aclk),
         .CE(slv_reg_rden),
-        .D(o_data[5]),
+        .D(reg_data_out[5]),
         .Q(s00_axi_rdata[5]),
         .R(FiltroFirAxi_inst_n_0));
   FDRE \axi_rdata_reg[6] 
        (.C(s00_axi_aclk),
         .CE(slv_reg_rden),
-        .D(o_data[6]),
+        .D(reg_data_out[6]),
         .Q(s00_axi_rdata[6]),
         .R(FiltroFirAxi_inst_n_0));
   FDRE \axi_rdata_reg[7] 
        (.C(s00_axi_aclk),
         .CE(slv_reg_rden),
-        .D(o_data[7]),
+        .D(reg_data_out[7]),
         .Q(s00_axi_rdata[7]),
         .R(FiltroFirAxi_inst_n_0));
   FDRE \axi_rdata_reg[8] 
        (.C(s00_axi_aclk),
         .CE(slv_reg_rden),
-        .D(o_data[8]),
+        .D(reg_data_out[8]),
         .Q(s00_axi_rdata[8]),
         .R(FiltroFirAxi_inst_n_0));
   FDRE \axi_rdata_reg[9] 
        (.C(s00_axi_aclk),
         .CE(slv_reg_rden),
-        .D(o_data[9]),
+        .D(reg_data_out[9]),
         .Q(s00_axi_rdata[9]),
         .R(FiltroFirAxi_inst_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT4 #(
     .INIT(16'h08F8)) 
     axi_rvalid_i_1
@@ -6132,7 +6202,7 @@ module design_1_FirAxi_0_0_FirAxi_v5_0_S00_AXI
         .D(axi_rvalid_i_1_n_0),
         .Q(s00_axi_rvalid),
         .R(FiltroFirAxi_inst_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT4 #(
     .INIT(16'h0080)) 
     axi_wready_i_1
