@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='h:/jorge/upm/master/1ercuatri/des/trabajo_filtrofir/filtro-fir---des/ip_repo/edit_FirAxi_v5_0.runs/synth_1'
+HD_PWD='H:/Jorge/UPM/master/1erCuatri/DES/Trabajo_filtroFIR/FILTRO-FIR---DES/ip_repo/edit_FirAxi_v5_0.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

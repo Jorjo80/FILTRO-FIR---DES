@@ -47,7 +47,6 @@ begin
 end process p_input;
 p_mult : process (i_rstb,i_clk)
 begin
-  fir_valid  <= '0';
   if(i_rstb='0') then
     r_mult       <= (others=>(others=>'0'));
   elsif(rising_edge(i_clk)) then
@@ -76,6 +75,7 @@ begin
 end process p_add_st1;
 p_output : process (i_rstb,i_clk)
 begin
+  fir_valid  <= '1';
   if(i_rstb='0') then
     o_data     <= (others=>'0');
   elsif(rising_edge(i_clk)) then
