@@ -1,0 +1,11 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0_sim_netlist.vhdl" \
+"../../../bd/design_1/ipshared/4414/src/Fir.vhd" \
+"../../../bd/design_1/ipshared/4414/hdl/FirAxi_v6_0_S00_AXI.vhd" \
+"../../../bd/design_1/ipshared/4414/hdl/FirAxi_v6_0.vhd" \
+"../../../bd/design_1/ip/design_1_FirAxi_0_0/sim/design_1_FirAxi_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_rst_ps7_0_100M_0/sim/design_1_rst_ps7_0_100M_0.vhd" \
+"../../../bd/design_1/sim/design_1.vhd" \
+"../../../bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_sim_netlist.vhdl" \
+
+nosort
