@@ -1,0 +1,55 @@
+12:55:22 **** Auto Build of configuration Debug for project FirSDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FirSDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:109:6: warning: 'main' is normally a non-static function [-Wmain]
+  int main()
+      ^~~~
+In file included from ../src/helloworld.c:105:0:
+../src/helloworld.c: In function 'main':
+../../FirSDK_bsp/ps7_cortexa9_0/include/FirAxi.h:37:4: warning: implicit declaration of function 'Xil_Out32' [-Wimplicit-function-declaration]
+    Xil_Out32((BaseAddress) + (RegOffset), (u32)(Data))
+    ^
+../src/helloworld.c:118:6: note: in expansion of macro 'FIRAXI_mWriteReg'
+      FIRAXI_mWriteReg(XPAR_FIRAXI_0_S00_AXI_BASEADDR, 0,coeff_0);
+      ^~~~~~~~~~~~~~~~
+../../FirSDK_bsp/ps7_cortexa9_0/include/FirAxi.h:57:5: warning: implicit declaration of function 'Xil_In32' [-Wimplicit-function-declaration]
+     Xil_In32((BaseAddress) + (RegOffset))
+     ^
+../src/helloworld.c:130:18: note: in expansion of macro 'FIRAXI_mReadReg'
+       out_data = FIRAXI_mReadReg(XPAR_FIRAXI_0_S00_AXI_BASEADDR, 20);
+                  ^~~~~~~~~~~~~~~
+In file included from ../../FirSDK_bsp/ps7_cortexa9_0/include/xstatus.h:55:0,
+                 from ../../FirSDK_bsp/ps7_cortexa9_0/include/FirAxi.h:8,
+                 from ../src/helloworld.c:105:
+../src/helloworld.c: In function 'main':
+../../FirSDK_bsp/ps7_cortexa9_0/include/xil_assert.h:77:12: warning: unused variable 'Xil_AssertWait' [-Wunused-variable]
+ extern s32 Xil_AssertWait;
+            ^~~~~~~~~~~~~~
+../../FirSDK_bsp/ps7_cortexa9_0/include/xil_assert.h:76:12: warning: unused variable 'Xil_AssertStatus' [-Wunused-variable]
+ extern u32 Xil_AssertStatus;
+            ^~~~~~~~~~~~~~~~
+At top level:
+../src/helloworld.c:109:6: warning: 'main' defined but not used [-Wunused-function]
+  int main()
+      ^~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: FirSDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../FirSDK_bsp/ps7_cortexa9_0/lib -o "FirSDK.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: FirSDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size FirSDK.elf  |tee "FirSDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  22120	   1148	  22568	  45836	   b30c	FirSDK.elf
+'Finished building: FirSDK.elf.size'
+' '
+
+12:55:24 Build Finished (took 1s.581ms)
+

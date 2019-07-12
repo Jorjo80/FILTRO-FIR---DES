@@ -1,6 +1,6 @@
-12:23:02 INFO  : Registering command handlers for SDK TCF services
-12:23:03 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\Pract\Desktop\FiltroFir\project_2\project_2.sdk\temp_xsdb_launch_script.tcl
-12:23:05 INFO  : XSCT server has started successfully.
-12:23:05 INFO  : Successfully done setting XSCT server connection channel  
-12:23:05 INFO  : Successfully done setting SDK workspace  
-12:23:05 INFO  : Processing command line option -hwspec C:/Users/Pract/Desktop/FiltroFir/project_2/project_2.sdk/design_1_wrapper.hdf.
+12:41:28 INFO  : Registering command handlers for SDK TCF services
+12:41:28 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\Pract\Desktop\FiltroFir\project_2\project_2.sdk\temp_xsdb_launch_script.tcl
+12:41:31 INFO  : XSCT server has started successfully.
+12:41:31 INFO  : Successfully done setting XSCT server connection channel  
+12:41:31 INFO  : Successfully done setting SDK workspace  
+12:41:31 INFO  : Processing command line option -hwspec C:/Users/Pract/Desktop/FiltroFir/project_2/project_2.sdk/design_1_wrapper.hdf.
