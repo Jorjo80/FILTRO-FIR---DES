@@ -1,4 +1,4 @@
-12:55:22 **** Auto Build of configuration Debug for project FirSDK ****
+10:00:21 **** Auto Build of configuration Debug for project FirSDK ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -17,6 +17,10 @@ In file included from ../src/helloworld.c:105:0:
 ../src/helloworld.c:118:6: note: in expansion of macro 'FIRAXI_mWriteReg'
       FIRAXI_mWriteReg(XPAR_FIRAXI_0_S00_AXI_BASEADDR, 0,coeff_0);
       ^~~~~~~~~~~~~~~~
+../src/helloworld.c:126:29: warning: format '%f' expects argument of type 'double', but argument 2 has type 'int' [-Wformat=]
+       printf("\n Data In = %f\n",in_data);
+                             ^
+In file included from ../src/helloworld.c:105:0:
 ../../FirSDK_bsp/ps7_cortexa9_0/include/FirAxi.h:57:5: warning: implicit declaration of function 'Xil_In32' [-Wimplicit-function-declaration]
      Xil_In32((BaseAddress) + (RegOffset))
      ^
@@ -39,17 +43,14 @@ At top level:
       ^~~~
 'Finished building: ../src/helloworld.c'
 ' '
-'Building target: FirSDK.elf'
-'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../FirSDK_bsp/ps7_cortexa9_0/lib -o "FirSDK.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: FirSDK.elf'
-' '
-'Invoking: ARM v7 Print Size'
-arm-none-eabi-size FirSDK.elf  |tee "FirSDK.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  22120	   1148	  22568	  45836	   b30c	FirSDK.elf
-'Finished building: FirSDK.elf.size'
-' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FirSDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+../src/platform.c:43:22: fatal error: ps7_init.h: No such file or directory
+ #include "ps7_init.h"
+                      ^
+compilation terminated.
+make: *** [src/platform.o] Error 1
 
-12:55:24 Build Finished (took 1s.581ms)
+10:00:22 Build Finished (took 980ms)
 
