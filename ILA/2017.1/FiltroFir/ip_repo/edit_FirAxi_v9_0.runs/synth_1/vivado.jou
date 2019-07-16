@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Fri Jul 12 12:10:12 2019
+# Process ID: 8696
+# Current directory: c:/Users/Pract/Desktop/FiltroFir/ip_repo/edit_FirAxi_v9_0.runs/synth_1
+# Command line: vivado.exe -log FirAxi_v9_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FirAxi_v9_0.tcl
+# Log file: c:/Users/Pract/Desktop/FiltroFir/ip_repo/edit_FirAxi_v9_0.runs/synth_1/FirAxi_v9_0.vds
+# Journal file: c:/Users/Pract/Desktop/FiltroFir/ip_repo/edit_FirAxi_v9_0.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source FirAxi_v9_0.tcl -notrace

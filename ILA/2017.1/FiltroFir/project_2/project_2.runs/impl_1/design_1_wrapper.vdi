@@ -1,0 +1,69 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Tue Jul 16 14:47:01 2019
+# Process ID: 8436
+# Current directory: C:/Users/Pract/Desktop/FILTRO-FIR---DES/2017.1/FiltroFir/project_2/project_2.runs/impl_1
+# Command line: vivado.exe -log design_1_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
+# Log file: C:/Users/Pract/Desktop/FILTRO-FIR---DES/2017.1/FiltroFir/project_2/project_2.runs/impl_1/design_1_wrapper.vdi
+# Journal file: C:/Users/Pract/Desktop/FILTRO-FIR---DES/2017.1/FiltroFir/project_2/project_2.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace
+Command: open_checkpoint design_1_wrapper_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 219.426 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 180 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.1
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Pract/Desktop/FILTRO-FIR---DES/2017.1/FiltroFir/project_2/project_2.runs/impl_1/.Xil/Vivado-8436-ACER_1/dcp3/design_1_wrapper_board.xdc]
+Finished Parsing XDC File [C:/Users/Pract/Desktop/FILTRO-FIR---DES/2017.1/FiltroFir/project_2/project_2.runs/impl_1/.Xil/Vivado-8436-ACER_1/dcp3/design_1_wrapper_board.xdc]
+Parsing XDC File [C:/Users/Pract/Desktop/FILTRO-FIR---DES/2017.1/FiltroFir/project_2/project_2.runs/impl_1/.Xil/Vivado-8436-ACER_1/dcp3/design_1_wrapper_early.xdc]
+Finished Parsing XDC File [C:/Users/Pract/Desktop/FILTRO-FIR---DES/2017.1/FiltroFir/project_2/project_2.runs/impl_1/.Xil/Vivado-8436-ACER_1/dcp3/design_1_wrapper_early.xdc]
+Parsing XDC File [C:/Users/Pract/Desktop/FILTRO-FIR---DES/2017.1/FiltroFir/project_2/project_2.runs/impl_1/.Xil/Vivado-8436-ACER_1/dcp3/design_1_wrapper.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Users/Pract/Desktop/FILTRO-FIR---DES/2017.1/FiltroFir/project_2/project_2.runs/impl_1/.Xil/Vivado-572-ACER_1/dbg_hub_CV.0/out/xsdbm.xdc:11]
+get_clocks: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1205.922 ; gain = 564.371
+Finished Parsing XDC File [C:/Users/Pract/Desktop/FILTRO-FIR---DES/2017.1/FiltroFir/project_2/project_2.runs/impl_1/.Xil/Vivado-8436-ACER_1/dcp3/design_1_wrapper.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.564 . Memory (MB): peak = 1215.652 ; gain = 5.746
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.565 . Memory (MB): peak = 1215.652 ; gain = 5.746
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 62 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 56 instances
+  RAM32M => RAM32M (RAMS32, RAMS32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32): 6 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2017.1 (64-bit) build 1846317
+open_checkpoint: Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1215.656 ; gain = 1003.992
+Command: write_bitstream -force design_1_wrapper.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020-clg400'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020-clg400'
+Running DRC as a precondition to command write_bitstream
+Command: report_drc (run_mandatory_drcs) for: bitstream_checks
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC RTSTAT-10] No routable loads: 27 net(s) have no routable loads. The problem bus(es) and/or net(s) are dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg[2:0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_capture[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_drck[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_flags[7:0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_runtest[0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/s_bscan_tms, u_ila_0/inst/ila_core_inst/u_ila_regs/U_XSDB_SLAVE/s_daddr_o[13], u_ila_0/inst/ila_core_inst/u_ila_regs/U_XSDB_SLAVE/s_daddr_o[14], u_ila_0/inst/ila_core_inst/u_ila_regs/U_XSDB_SLAVE/s_daddr_o[15]... and (the first 15 of 18 listed).
+report_drc (run_mandatory_drcs) completed successfully
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 1 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Project 1-821] Please set project.enableDesignId to be 'true'.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./design_1_wrapper.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-118] WebTalk data collection is enabled (User setting is ON. Install Setting is ON.).
+INFO: [Common 17-186] 'C:/Users/Pract/Desktop/FILTRO-FIR---DES/2017.1/FiltroFir/project_2/project_2.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Tue Jul 16 14:47:43 2019. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2017.1/doc/webtalk_introduction.html.
+17 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1694.043 ; gain = 478.387
+INFO: [Common 17-206] Exiting Vivado at Tue Jul 16 14:47:43 2019...
