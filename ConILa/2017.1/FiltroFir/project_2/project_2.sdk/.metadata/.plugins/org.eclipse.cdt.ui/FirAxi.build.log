@@ -1,8 +1,0 @@
-14:42:07 **** Incremental Build of configuration Debug for project FirAxi ****
-make pre-build main-build 
-a9-linaro-pre-build-step
-' '
-make: No se hace nada para `main-build'.
-
-14:42:07 Build Finished (took 277ms)
-
