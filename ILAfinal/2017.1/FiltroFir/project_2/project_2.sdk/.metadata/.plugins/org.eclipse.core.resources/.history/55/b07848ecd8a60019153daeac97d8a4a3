@@ -1,0 +1,39 @@
+
+#include <stdio.h>
+#include "platform.h"
+#include "xil_printf.h"
+
+#include "FirAxi.h"
+#include <math.h>
+#include "xil_io.h"
+
+int main()
+{
+    init_platform();
+
+    int coeff_0 = 1;
+	int coeff_1=1;
+	int coeff_2=1;
+	int coeff_3=1;
+	int in_data;
+	double out_data;
+	FIRAXI_mWriteReg(XPAR_FIRAXI_0_S00_AXI_BASEADDR, 0,coeff_0);
+	FIRAXI_mWriteReg(XPAR_FIRAXI_0_S00_AXI_BASEADDR, 4,coeff_1);
+	FIRAXI_mWriteReg(XPAR_FIRAXI_0_S00_AXI_BASEADDR, 8,coeff_2);
+	FIRAXI_mWriteReg(XPAR_FIRAXI_0_S00_AXI_BASEADDR, 12,coeff_3);
+	for(int i=0;i<360;i++)
+	{
+	   in_data = 10*(sin((i/180)*(3.14)))+11;
+	   FIRAXI_mWriteReg(XPAR_FIRAXI_0_S00_AXI_BASEADDR, 16,in_data);
+	   printf("\n Data In = %d\n",in_data);
+	   for(int j=0; j<10000;j++)
+	   {
+	   }
+	   out_data = FIRAXI_mReadReg(XPAR_FIRAXI_0_S00_AXI_BASEADDR, 20);
+	   printf("Data Out = %f",out_data);
+	 }
+
+	 cleanup_platform();
+	 return 0;
+}
+

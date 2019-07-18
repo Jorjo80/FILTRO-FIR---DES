@@ -1,0 +1,37 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.1 (win64) Build 1846317 Fri Apr 14 18:55:03 MDT 2017
+| Date         : Fri Jul 12 11:41:54 2019
+| Host         : ACER_1 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_FirAxi_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_FirAxi_0_0 (xilinx.com:user:FirAxi:8.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.1 (win64) Build 1846317 Fri Apr 14 18:55:03 MDT 2017
+| Date         : Fri Jul 12 11:06:56 2019
+| Host         : ACER_1 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_FirAxi_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_FirAxi_0_1 (xilinx.com:user:FirAxi:17.1 (Rev. 10)) to Vivado generation flows.
+
